@@ -1,0 +1,32 @@
+/* Created by Sam Cubberly 6 27 to hold all the CSS rules to work with the toggle button at the top of the page */
+
+label.opened{
+	margin:30px;
+}
+
+label.closed{
+        display: none;
+}
+
+input:checked ~ div label.opened {
+        display: none;
+}
+
+input:checked ~ div label.closed {
+        display: inline;
+	margin: 30px;
+} 
+
+div#toggleButton {
+	margin: 15px 0px 15px 5px;
+        width: 100%;
+}
+
+span#openBio {
+        color: red;
+}
+
+span#closeBio {
+        color: green;
+}
+

@@ -1,0 +1,10 @@
+# top_banner_qualifications.yml
+# Author Oliver Shen 06/23/2025
+# Navigation link definitions for the Top Banner partial
+# Each key represents a tab name and its value is the corresponding page URL.
+home: "/index.html"
+bio: "/bio.html"
+fun_stuff: "/fun_stuff.html"
+research: "/research.html"
+teaching: "/teaching.html"
+publications: "/publications.html"

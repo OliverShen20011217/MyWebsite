@@ -1,0 +1,39 @@
+#author Yunfeng Wang 06/27/2025
+
+- name: Ahmad Aljanaideh
+  major: CSE, December '21
+  title: Co-advised with Marie Catherine de Marneffe Assistant Professor, Bentley University
+  image: user.png
+  linkedin: "https://www.linkedin.com/in/ahmad-aljanaideh-60a714126/"
+  scholar: "https://scholar.google.com/citations?user=puwSemMAAAAJ&hl=en&oi=ao"
+- name: Joo Kyung Kim
+  major: CSE, August '17
+  title: Senior Applied Scientist, Amazon AGI
+  image: user.png
+  linkedin: "https://supakjk.github.io/"
+  scholar: "https://scholar.google.com/citations?hl=en&user=SeRGQv4AAAAJ"
+- name: Anton Rytting
+  major: Linguistics, December '06
+  title: Co-advised with Chris Brew Associate Research Scientist, Applied Research Lab for Intelligence & Security, U. Maryland
+  image: user.png
+  linkedin: "https://www.cs.umd.edu/people/crytting"
+  scholar: "https://scholar.google.com/citations?hl=en&user=iBiZjx0AAAAJ"
+- name: Deblin Bagchi
+  major: CSE, December '19
+  title: Speech Scientist, Solventum
+  image: user.png
+  linkedin: "https://www.linkedin.com/in/deblin-bagchi-abbb5124/"
+  scholar: "https://scholar.google.com/citations?user=LAIkmDUAAAAJ&hl=en&oi=ao"
+- name: Chaitanya Kulkarni
+  major: CSE, December '21
+  title: Co-advisor; primary advisor Raghu Machiraju AI ML Scientist, PayPal
+  image: user.png
+  linkedin: "https://www.linkedin.com/in/chaitanya2334/"
+  scholar: "https://scholar.google.com/citations?user=T6mf1-oAAAAJ&hl=en&oi=ao"
+- name: Prashant Serai
+  major: CSE, May '20
+  title: Co-advised with Albert Lai Senior Applied Scientist, Amazon
+  image: user.png
+  linkedin: "https://www.linkedin.com/in/cshivade/"
+  scholar: "https://scholar.google.com/citations?user=ORJJGWoAAAAJ&hl=en&oi=ao"
+

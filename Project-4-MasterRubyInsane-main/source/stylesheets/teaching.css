@@ -1,0 +1,38 @@
+/* Created by Sam Cubberly to give css to the teaching tab! */
+
+/* Holds all resources */
+.multi-content-container{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+/* Sets up each box that the student resources will be contained in */
+.class_resource {
+	border: solid 1px lightgray;
+	margin: 10px;
+	padding: 10px;
+	width: 25%;
+	max-width: 25%;
+	max-height: 50%;
+	overflow: auto;
+}
+
+
+/* Added Sam cubberly 3 27 to give a specific size to the description */
+.class_resource .description {
+	overflow: auto;
+	max-height: 100px;
+}
+
+.class_resource img.descImage {
+	object-fit: cover;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+/* Edit Sam Cubberly 6 27 adding padding to look better */
+h1.teachingTitles {
+	margin: 10px;
+	padding: 10px;
+	text-decoration: underline;
+}

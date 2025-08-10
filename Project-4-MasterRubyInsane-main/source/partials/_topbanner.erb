@@ -1,0 +1,28 @@
+<!--
+  @author Oliver Shen 6/23
+  _topbanner.erb – Top Banner partial for Prof. Eric Fosler-Lussier’s site
+  Renders site name and navigation tabs.
+  Each tab’s URL is pulled from data.top_banner in top_banner.yml.
+-->
+
+<nav class="top-banner">
+  <a href="<%= data.top_banner.home %>" class="tb-left">
+    Eric Fosler-Lussier
+  </a>
+  <ul class="tb-right">
+    <li><a href="<%= data.top_banner.home %>" class="<%= ['/', data.top_banner.home].include?(current_page.url) ? 'active' : '' %>">
+    Home</a></li>
+    <li><a href="<%= data.top_banner.bio %>" class="<%= current_page.url == data.top_banner.bio ? 'active' : '' %>">
+    Bio</a></li>
+    <li><a href="<%= data.top_banner.research %>" class="<%= current_page.url == data.top_banner.research ? 'active' : '' %>">
+    Research</a></li>
+    <li><a href="<%= data.top_banner.teaching %>"class="<%= current_page.url == data.top_banner.teaching ? 'active' : '' %>">
+    Teaching</a></li>
+    <li><a href="<%= data.top_banner.publications %>" class="<%= current_page.url == data.top_banner.publications ? 'active' : '' %>">
+    Publications</a></li>
+    <li><a href="<%= data.top_banner.fun_stuff %>" class="<%= current_page.url == data.top_banner.fun_stuff ? 'active' : '' %>">
+    Fun Stuff</a></li>
+  </ul>
+</nav>
+
+

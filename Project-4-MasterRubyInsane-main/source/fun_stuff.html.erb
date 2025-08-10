@@ -1,0 +1,56 @@
+---
+title: "Fun Stuff"
+---
+<!--@author Anshuman Ranjan-->
+<!--@created 6/26/25-->
+<!--@desciption Prints a header, description, and image(s) of the professor's extra-curriculars-->
+<!--@utilizes fun_stuff_images.yml, professional_activities.yml, fun_stuff.css, /images/funstuff/*(.jpg,.png), any inherited CSS from other CSS files (not explicitly tracked)-->
+
+<section class="fun_stuff">
+    <h1>Fun Stuff About Me</h1>
+    <div class="fun_stuff_grid">
+        <!-- iterates over fun_stuff_images.yml to print the section, details(+links+github), and image for each extra-curricular -->
+        <% data.fun_stuff_images.each do |section, details_hash| %>
+            <% next if section == "Cooking"%> <!-- Skipping section that has multiple images -->
+            <div></div>
+            <div class="description">
+                <h2><%= section %></h2>
+                <p><%= details_hash["description"]%></p>
+                <% if details_hash["link"] %>
+                    <p><a href="<%= details_hash["link"] %>"> Visit Site </a></p>
+                <%end%>
+                <% if details_hash["github"] %>
+                    <p><a href="<%= details_hash["github"] %>"> GitHub </a></p>
+                <% end %>
+            </div>
+            <div></div>
+            <div class="gallery-grid">
+                <% if details_hash["image"] %>
+                <div class="gallery-item">
+                    <img src="/images/funstuff/<%= details_hash["image"] %>" alt="<%= details_hash["image"] %>"/>
+                </div>
+                <%end%>
+            </div>
+            <div></div>
+        <%end%>
+    </div>
+
+    <!-- This code uses the same div+class as above for showing the description, but uses a different div to show 3 images side-by-side instead of just 1 image -->
+    <% if cooking = data.fun_stuff_images["Cooking"] %>
+    <div class="fun_stuff_grid">
+        <div></div>
+        <div>
+        <h2>Cooking</h2>
+        <p><%= cooking.description %></p>
+        </div>
+    </div>
+
+    <div class="cooking_grid">
+        <%cooking.images.each do |img|%>
+            <div class="gallery-item">
+                <img src="/images/<%= img %>" alt="<%= img %>">
+            </div>
+        <% end %>
+    </div>
+    <% end %>
+</section>

@@ -1,0 +1,174 @@
+---
+title: "Home"
+---
+<!-- Created by Anshuman Ranjan 6/26 to Display the home/index page of the website.-->
+<!-- Edited by Yunfeng Wang 6/27 to Display the section of Research, Current Research Students, PhD Graduates, Postdoctoral Researchers, MS/BS Graduates of the website.-->
+<!-- Edited by Oliver Shen 6/27 to Display the section of publications, Recent News, Useful Stuff of the website.-->
+
+<link rel = "stylesheet" href = "stylesheets/publications.css">
+<link rel="stylesheet" href="/stylesheets/research.css">
+
+<section class="hero">
+  <h1>Welcome to Prof. Eric Fosler-Lussier's Website</h1>
+
+  <!-- @author Yunfeng Wang -->
+  <div class="research">
+    <h2><%= data.research.home.research.title %></h2>
+    <p><%= data.research.home.research.intro %></p>
+
+    <ul>
+      <% data.research.home.research.topics.each do |topic| %>
+        <li><%= topic %></li>
+      <% end %>
+    </ul>
+
+    <p>
+      <% data.research.home.research.links.each do |link| %>
+        <a href="<%= link.url %>"><%= link.text %></a>
+      <% end %>
+    </p>
+  </div>
+
+  <!-- @author Oliver Shen, extra used research from research.css-->
+  <div class="research">
+    <h1 class="pub-main-title">Publications</h1>
+    <h3 class="pub-sub-title gray2">Recent publications include</h3>  
+    <ul class="no-bullets pub-list">
+      <% pubs = data.publications.categories.sort_by { |c| -c.year }.flat_map(&:items).first(5) %>
+      <% pubs.each do |pub| %>
+        <li >
+          <span class="black_tag"><%= pub.venue_short %></span>
+          <%= pub.authors.join(", ") %>，“<%= pub.title %>”, <em><%= pub.venue %></em>
+          <% if pub.vol && pub.pages %>, <%= pub.vol %>, <%= pub.pages %><% end %>,
+          <%= pub.year %>.<% if pub.doi && !pub.doi.empty? %> <a href="<%= pub.doi %>" class="pub-link" target="_blank">DOI</a><% end %><br><br>
+        </li>
+      <% end %>
+    </ul>
+    <a href="/publications.html" class="pub-link">Full List</a>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="<%= data.publications.Google_Scholar %>" class="pub-link" target="_blank">Google Scholar</a>
+  </div>
+
+
+  <div class="homepage-flex"><!-- @author Oliver Shen -->
+    <div class="research recent-news-box"> <!-- @author Oliver Shen -->
+      <h2>Recent News</h2>
+      <h3>🎓 Congratulations to our Recent Graduates! 🎉</h3>
+      <div class="student-grid">
+        <% data.recent_news.recent_graduates.each do |student| %>
+          <div class="student-card">
+            <img src="/images/<%= student['image'] %>" alt="<%= student['name'] %>" class="student-photo" />
+            <h3><%= student['name'] %></h3>
+            <p><%= student['degree'] %></p>
+            <p>
+              <a href="<%= student['url'] %>" target="_blank">
+                LinkedIn
+              </a>
+            </p>
+          </div>
+          <% end %>
+      </div>
+        <% if data.recent_news.other_announcements && data.recent_news.other_announcements.any? %>
+        <h3>Other News</h3>
+        <ul>
+          <% data.recent_news.other_announcements.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      <% else %>
+        <p>More news coming soon…</p>
+      <% end %>
+    </div>
+
+    <div class="research useful-stuff-box"><!-- @author Oliver Shen -->
+      <h2>Useful Stuff</h2>
+      <h3 class="pub-sub-title gray2">Some things we've done</h3>  
+      <ul>
+        <% data.useful_stuff.each do |item| %>
+          <li><a href="<%= item.url %>" target="_blank" class="pub-link"><%= item.title %></a></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+
+<div class="content-wrapper">
+  <h2>Current Research Students</h2> <!-- @author Yunfeng Wang -->
+  <div class="student-grid">
+    <% data.current_research_students.each do |student| %>
+      <div class="student-card">
+        <img src="/images/<%= student.image %>" alt="<%= student.name %>" class="student-photo" />
+        <h3><%= student.name %></h3>
+        <p><%= student.major %></p>
+        <% if student.title && !student.title.empty? %>
+          <p class="student-title"><%= student.title %></p>
+        <% end %>
+        <p>
+          <a href="<%= student.linkedin %>" target="_blank">LinkedIn</a> |
+          <a href="<%= student.scholar %>" target="_blank">Scholar</a>
+        </p>
+      </div>
+    <% end %>
+  </div>
+
+  <section class="phd-graduates"> <!-- @author Yunfeng Wang -->
+    <h2>PhD Graduates</h2>
+    <div class="card-container">
+      <% data['phd_graduates'].each do |graduate| %>
+        <div class="student-card">
+          <%= image_tag graduate['image'], alt: "Photo of #{graduate['name']}" %>
+          <h3><%= graduate['name'] %></h3>
+          <p><%= graduate['major'] %></p>
+          <p><%= graduate['title'] %></p>
+          <p>
+            <a href="<%= graduate['linkedin'] %>">LinkedIn</a> |
+            <a href="<%= graduate['scholar'] %>">Scholar</a>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  </section>
+
+  <section class="postdocs-section"> <!-- @author Yunfeng Wang -->
+    <h2>Postdoctoral Researchers</h2>
+    <div class="card-container">
+      <% data.postdocs.each do |postdoc| %>
+        <div class="student-card">
+          <%= image_tag postdoc['image'], alt: "Photo of #{postdoc['name']}" %>
+          <h3><%= postdoc['name'] %></h3>
+          <p><%= postdoc['major'] %></p>
+          <p><%= postdoc['title'] %></p>
+          <p>
+            <a href="<%= postdoc['linkedin'] %>">LinkedIn</a> |
+            <a href="<%= postdoc['scholar'] %>">Scholar</a>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  </section>
+
+  <section class="msbs-graduates"> <!-- @author Yunfeng Wang -->
+    <h2>MS/BS Graduates</h2>
+    <div class="card-container">
+      <% data.ms_bs_graduates.each do |grad| %>
+        <div class="student-card">
+          <img src="<%= image_path(grad['image']) %>" alt="Photo of <%= grad['name'] %>">
+          <h3><%= grad['name'] %></h3>
+          <p><%= grad['major'] %></p>
+          <% if grad['title'] && !grad['title'].empty? %>
+            <p><%= grad['title'] %></p>
+          <% end %>
+          <p>
+            <% if grad['linkedin'] && !grad['linkedin'].empty? %>
+              <a href="<%= grad['linkedin'] %>">LinkedIn</a>
+            <% end %>
+            <% if grad['linkedin'] && grad['scholar'] && !grad['scholar'].empty? %> | <% end %>
+            <% if grad['scholar'] && !grad['scholar'].empty? %>
+              <a href="<%= grad['scholar'] %>">Scholar</a>
+            <% end %>
+          </p>
+        </div>
+      <% end %>
+    </div>
+  </section>
+</div>
+</section>

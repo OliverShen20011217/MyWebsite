@@ -1,0 +1,34 @@
+<!--@author Anshuman Ranjan-->
+<!--@created 6/24/25-->
+<!--@description: An HTML template of the top and left banners that will appear on all the pages of the site-->
+
+<!-- @Edit Sam Cubberly - added the maingrid class to the bio and the content -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset= "UTF-8">
+		<title>Eric Fosler-Lussier: <%= current_page.data.title %> </title>
+		<% data.stylesheets.each do |css_name, file_path| %>
+		<link rel = "stylesheet" href=<%=file_path%>>
+		<%end%>
+
+	</head>
+	<body>
+		<%= partial "partials/topbanner" %> <!-- Oliver -->
+		
+		<!-- Sam Cubberly - Added toggle button with main grid to hide the bio on the side of page -->
+		<%= partial "partials/toggleButton" %>
+
+		<!-- Sam Cubberly - Added the maingrid to separate the partials from the body content -->
+		<div class= "maingrid">
+			<div class = "leftGrid grayBack1">
+		    		<%= partial "partials/left_banner_qualifications" %> <!--  Yunfeng -->
+    				<%= partial "partials/leftBarContact.html" %> <!-- Samuel -->
+			</div>
+			<div class = "rightGrid">
+				<%= yield %>
+			</div>
+		</div>
+			
+	</body>
+</html>

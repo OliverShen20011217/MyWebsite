@@ -1,0 +1,18 @@
+#@author Anshuman Ranjan
+#@created 06/26/25
+#@description Name+Links to all the CSS files (and 1 external font) used in the project
+#@use Utilized by layout.erb
+
+#Project CSS links
+layout.css: stylesheets/layout.css
+main.css: stylesheets/main.css
+leftContact: stylesheets/leftContact.css
+topbanner.css: stylesheets/topbanner.css
+bio.css: stylesheets/bio.css
+button.css: stylesheets/toggleButton.css
+teaching.css: stylesheets/teaching.css
+fun_stuff.css: stylesheets/fun_stuff.css
+
+#Imported fonts
+google_fonts: https://fonts.googleapis.com/css2?family=Nunito&family=Roboto&display=swap
+

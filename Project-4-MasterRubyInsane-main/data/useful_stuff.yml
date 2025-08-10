@@ -1,0 +1,15 @@
+# usful_stuff.yml 
+# author Oliver Shen 6/28
+
+- title: "OSU SLaTe Lab GitHub Repository"
+  url: "https://github.com/OSU-slatelab"
+- title: "Ohio Child Speech Corpus"
+  url: "https://talkbank.org/childes/access/Eng-NA/OCSC.html"
+- title: "OSU Virtual Patient Project"
+  url: "https://www.youtube.com/channel/UClcHk9xPa2e0PQqJBtJ_3xg"
+- title: "COVID Concept Embeddings"
+  url: "https://slate.cse.ohio-state.edu/JET/COVID-19/"
+- title: "Speech Recognition Virtual Kitchen"
+  url: "https://dnserrorassist.att.net/search/?q=http%3A//speechkitchen.org/&r=&t=0&srchgdeCid=jimaaaaa&bc="
+- title: "Buckeye Corpus of Speech"
+  url: "https://buckeyecorpus.osu.edu/"

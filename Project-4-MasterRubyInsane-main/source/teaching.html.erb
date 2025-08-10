@@ -1,0 +1,36 @@
+<!-- Created Sam Cubberly to Display the teaching tab of the website -->
+<h1 class = "teachingTitles">Teaching: Classes Taught At Ohio State</h1>
+<div class = "multi-content-container">
+	<% data.teaching.classes.each do |course| %>
+		<div class = "class_resource">
+			<h2><%= course["name"]%></h2>
+			<h3 class = "gray3"><%= course["number"]%></h3>
+			<p class = "gray2">Last Taught: <%= course["taught"]%></p>
+			<h4><a href = "">Syllabus</a></h4>
+		</div>
+	<% end %>
+</div>
+<h1 class = "teachingTitles">Resources From My Classes That Might Be Useful: </h1>
+<div class = "multi-content-container">
+	<% data.teaching.resources.each do |resource| %>
+	<div class = "class_resource">
+		<h2><%= resource["name"] %></h2>
+		<h2 class = "gray3"><%= resource["type"] %></h2>
+		<div class = "gray2">
+			<p><%= resource["number"] %></p>
+			<% if resource["description"] != nil %>
+
+				<p>Description:</p>
+				<p class = "description"><%= resource["description"]%></p>
+
+			<% end %>
+			<% if resource["image"] != nil %>
+
+				<img src = <%= resource["image"]%> class = "descImage">
+
+                        <% end %>
+			<h4><a href = "<%= resource["link"] %>">Link</a></h4>
+		</div>
+	</div>
+	<% end %>
+</div>

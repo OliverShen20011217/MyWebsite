@@ -1,0 +1,30 @@
+#@author Anshuman Ranjan
+#@created 6/27/25
+#@description Fun Stuff Images data
+
+Music Diplomacy Maps:
+  description: "I like to work with mapping software and created the maps and tour database interface for Danielle Fosler-Lussier's 'Music in America's Cold War Diplomacy'"
+  image: musicdiplomacy.png
+  link: https://musicdiplomacy.org/database.html
+
+Music on the Move Maps:
+  description: "The cool thing about having an awesome spouse who writes books about music and globalization is that you keep getting chances to play with maps. I was glad that she asked me to work on the maps for Music on the Move, an open access book available (soon) at the University of Michigan Press. I've open sourced the maps (which themselves built on various sources)."
+  image: motmmaps.jpg
+  link: https://musiconthemove.org/
+  github: https://github.com/efosler/MusicOnTheMove
+
+Published Musicologist! (not really):
+  description: "As a result of the above work, Danielle and I wrote a blog article for Musicology Now."
+  image: bookcover.jpg
+  link: https://musicologynow.org/rethinking-historical-data-a-foray-into-digital-humanities/
+
+Scouting:
+  description: "I volunteer with the Boy Scouts of America. And I like coffee."
+  image: coffee.jpg
+
+Cooking:
+  description: "I like to cook."
+  images:
+    - peppers.png
+    - frenchtoast.jpg
+    - pie.jpg

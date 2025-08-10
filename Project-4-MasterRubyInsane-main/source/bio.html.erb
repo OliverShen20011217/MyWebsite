@@ -1,0 +1,43 @@
+---
+title: "Bio"
+---
+<!--@author Anshuman Ranjan-->
+<!--@created 6/24/25-->
+<!--@description Prints professor's bio, and then lists out all his professional accomplishments over the years -->
+<!--@utilizes appointments.yml, professional_activities.yml, bio.css, any inherited CSS from other CSS files (not explicitly tracked)-->
+
+<section class="bio">
+<h1>Bio</h1>
+<li> Eric Fosler-Lussier is the John I. Makhoul Professor and Acting Department Chair of Computer Science and Engineering, with courtesy appointments in Linguistics and Biomedical Informatics, at The Ohio State University. After receiving a B.A.S. (Computer and Cognitive Science) and B.A. (Linguistics) from the University of Pennsylvania in 1993, he received his Ph.D. in 1999 from the University of California, Berkeley, performing his dissertation research at the International Computer Science Institute under the tutelage of Prof. Nelson Morgan. He has also been a Member of Technical Staff at Bell Labs, Lucent Technologies, a Visiting Researcher at Columbia University, and a Visiting Professor at the University of Pennsylvania. Awards inlcude NSF Career (2006), Ohio State College of Engineering Lumley Research Award (2010,2021), the IEEE Signal Processing Society Best Paper Award (2011), and the IMIA Yearbook Best Paper award in the Natural Language Processing (2015, 2017). </li>
+<li> He has published widely in speech and language processing, and is a Fellow of the International Speech Communication Association and the IEEE, and a member of the Association for Computational Linguistics. </li>
+<li> Fosler-Lussier served as an senior area editor for the IEEE/ACM Transactions on Audio, Speech, and Language Proessing; he has served three terms on the IEEE Speech and Language Technical Committee (Chair, 2019-2020). He also served on the editorial board of the ACM Transactions on Speech and Language Processing, as an action editor for Transactions of the Association for Computational Linguistics, and was co-Program Chair for NAACL 2012. </li>
+
+<div class="grid_container">
+  <%i=1%>
+  <!-- Code for visual timeline for appointments -->
+  <% timeline_names = ["Appointments", "Professional Activities"] %>
+  <!-- Create 2 Timelines (array_size = 2)-->
+  <%[data.appointments, data.professional_activites].each_with_index do |yml_file, index|%>
+    <div class="column<%=index%>">
+      <h2><%= timeline_names[index] %></h2>
+      <div class="timeline"> <!-- Begin creation of each timeline -->
+      <% yml_file.each do |start_year, event| %> <!-- Hash: Key: Year   Value: ARRAY of Events -->
+        <div class="event">
+          <div class = start_year> <%=start_year%> </div>
+          <div class="tooltip">
+            <% event.each do |element| %> <!-- Iterate over the array to generate 1 tooltip for all events that occured in start_year -->
+              <div class="date"><%= element["date_range"] %></div>
+              <div><%= element["position"] %></div>
+              <div><%= element["title"] %></div>
+              <div><%= element["location"] %></div>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  <%i += 1%>
+  <%end%>
+</div>
+</section>
+

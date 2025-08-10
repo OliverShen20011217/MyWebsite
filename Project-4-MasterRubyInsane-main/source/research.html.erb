@@ -1,0 +1,120 @@
+<!-- Author Yunfeng Wang Created 06/25/2025 -->
+
+<section class="research">
+
+<link rel="stylesheet" href="/stylesheets/research.css">
+<%= stylesheet_link_tag "selectors" %>
+
+  <!-- Introduction -->
+  <div class="research-block-boxed">
+    <h2><%= data.research.introduction.heading %></h2>
+    <% data.research.introduction.paragraphs.each do |para| %>
+      <p><%= para["text"].html_safe %></p>
+    <% end %>
+  </div>
+
+   <!-- Joining the lab -->
+    <div class="research-block-boxed">
+      <h2><%= data.research.joining_lab.heading %></h2>
+      <% desc = data.research.joining_lab.description.gsub(
+        'Speech and Language Technologies Laboratory',
+        "<a href='#{data.research.joining_lab.lab.lab_url}' target='_blank'>#{data.research.joining_lab.lab.name}</a>"
+        )
+      %>
+      <p><%= desc.html_safe %></p>
+
+
+      <% data.research.joining_lab.notes.each do |note| %>
+        <p>
+          <%= note[:text]
+            .gsub('see my note on the application process to OSU',
+                  '<a href="#osu-note">see my note on the application process to OSU</a>')
+            .gsub('see the once you are at OSU section of my note',
+                  '<a href="#osu-note">see the once you are at OSU section of my note</a>').html_safe %>
+        </p>
+      <% end %>
+    </div>
+
+<!-- OSU Note -->
+<details id="osu-note" open>
+  <summary><strong>OSU Note</strong></summary>
+
+  <div class="osu-note-box">
+    <% data.research.osu_note.sections.each do |section| %>
+      <h3><%= section.heading %></h3>
+
+      <% section.paragraphs.each do |p| %>
+        <p class="osu-note-paragraph"><%= p %></p>
+      <% end %>
+
+      <% if section[:name] && section[:grad_application_url] %>
+        <p>
+          <a href="<%= section.grad_application_url %>" target="_blank">
+            <%= section.name %>
+          </a>
+        </p>
+      <% end %>
+
+      <% if section[:course_list] %>
+        <ul>
+          <% section.course_list.each do |course| %>
+            <li class="osu-note-paragraph"><%= course %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    <% end %>
+
+    <% if data.research.osu_note.final_paragraph %>
+      <p class="osu-note-paragraph"><%= data.research.osu_note.final_paragraph %></p>
+    <% end %>
+  </div>
+</details>
+
+
+  <!-- Selected Papers -->
+  <div class="research-block-boxed">
+  <h2><%= data.research.papers['heading'] %></h2>
+    <% data.research.papers['entries'].each do |paper| %>
+      <div class="paper-entry">
+        <p>
+          <strong><%= paper['citation'] %></strong><br>
+          <a href="<%= paper['link'] %>" target="_blank"><%= paper['title'] %></a>,
+          <em><%= paper['venue'] %></em>
+        </p>
+        <p><%= paper['commentary'] %></p>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Example Research Section Formatting Guide -->
+  <details class="selector-demo-block">
+    <summary><strong> Research Abstract Layout</strong></summary>
+
+    <div class="research-section">
+      <h4>Research area</h4>
+      <p>research abstract here</p>
+
+      <div>
+        <p><em>Note:</em> This paragraph is embedded inside another tag and represents supplementary context, such as footnotes or author commentary.</p>
+      </div>
+
+      <h3>Recent Experiments & Observations</h3>
+      <p>experiment methods & outcomes</p>
+
+      <div>
+        <p>Follow-up paragraphs may include figures, result analysis, or contextual explanations related to the above findings.</p>
+      </div>
+
+      <p><strong>Resources:</strong></p>
+      <ul>
+        <li><a href="https://arxiv.org" target="_blank">Related Paper on arXiv</a></li>
+        <li><a href="https://github.com" target="_blank">Project Repository</a></li>
+      </ul>
+
+
+      <p>Editor can hover over this paragraph to simulate user emphasis or attention highlighting behavior in interactive contexts using selector.css.</p>
+    </div>
+  </details>
+
+
+</section>

@@ -1,0 +1,81 @@
+#@author Anshuman Ranjan
+#@created 6/24/25
+#@description Contains all the professor's appointments as described in his bio
+#@use Utilized by bio.html.erb. Format: < Hash[ Key, <Array[Hash]> ]>
+
+1994:
+  - position: Graduate Student Researcher
+    title: U.C. Berkeley and International Computer Science Institute
+    location: Berkeley, CA
+    date_range: "1994-1999"
+
+1999:
+  - position: Postdoctoral Researcher
+    title: International Computer Science Institute
+    location: Berkeley, CA
+    date_range: "1999-2000"
+
+2000:
+  - position: Member of Technical Staff
+    title: Bell Labs Research, Lucent Technologies
+    location: Murray Hill, NJ
+    date_range: "2000-2002"
+
+2003:
+  - position: Assistant Professor, and Assistant Professor by Courtesy (from 2004)
+    title: Dept. of Computer Science and Engineering and Dept. of Linguistics
+    location: Ohio State University
+    date_range: "2003-2010"
+
+  - position: Member
+    title: Center for Cognitive Science
+    location: Ohio State University
+    date_range: "2003-present"
+
+  - position: Visiting Research Scientist
+    title: Dept. of Electrical Engineering
+    location: Columbia University
+    date_range: "2003"
+
+2010:
+  - position: Associate Professor, and Associate Professor by Courtesy (since 2016)
+    title: Dept. of Computer Science and Engineering and Departments of Linguistics and Biomedical Informatics
+    location: Ohio State University
+    date_range: "2010-2016"
+
+2016:
+  - position: Professor, and Professor by Courtesy
+    title: Dept. of Computer Science and Engineering and Departments of Linguistics and Biomedical Informatics
+    location: Ohio State University
+    date_range: "2016-present"
+
+2019:
+  - position: Visiting Professor
+    title: Dept. of Computer and Information Science
+    location: University of Pennsylvania
+    date_range: "Jan - May 2019"
+
+2020:
+  - position: Program co-Director
+    title: Foundations of Data Science and Artificial Intelligence, Translational Data Analytics Institute
+    location: Ohio State University
+    date_range: "2020-2023"
+
+2021:
+  - position: Associate Chair for Academic Administration
+    title: Dept. of Computer Science and Engineering
+    location: Ohio State University
+    date_range: "2021-present"
+
+2022:
+  - position: John I. Makhoul Professor of Electrical and Computer Engineering
+    title: Ohio State University
+    location: Columbus, OH
+    date_range: "2022-2026"
+
+2025:
+  - position: Acting Department Chair
+    title: Dept. of Computer Science and Engineering
+    location: Ohio State University
+    date_range: "2025"
+

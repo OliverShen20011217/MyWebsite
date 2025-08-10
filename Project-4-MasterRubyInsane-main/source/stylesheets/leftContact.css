@@ -1,0 +1,26 @@
+/*
+Created 6-25 Sam Cubberly
+Added an unbulleted list
+Added leftbar
+ */
+ul.unbulleted {
+	padding: 5%;
+	list-style-type: none;
+}
+
+ul.unbulleted > li{
+    font-weight: bold;
+}
+.unbulleted a {
+    text-decoration: none;
+    font-weight: normal;
+}
+
+
+/* Seems to not need use rn */
+div.leftBar {
+             background-color: #e3e8e5;
+             float: left;
+             width: 500px;
+}
+

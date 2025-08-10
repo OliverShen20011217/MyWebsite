@@ -1,0 +1,100 @@
+/* Author Yunfeng Wang 06/23/2025
+  professor Eric image styling
+*/
+.professor-photo {
+  width: 100%;
+  max-width: 200px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+
+/* css for homepage current research students*/
+.student-list {
+  padding: 20px;
+}
+
+.student-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.student-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  width: 250px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #fdfdfd;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
+}
+
+.student-photo {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+/* css for homepage phd grads*/s
+.phd-graduates {
+  padding: 2rem;
+  background-color: #fdfbe7; 
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  margin-top: 1rem;
+}
+
+.student-card {
+  width: 250px;
+  padding: 1rem;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.student-card:hover {
+  transform: translateY(-5px);
+}
+
+.student-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin-bottom: 0.8rem;
+}
+
+.student-card h3 {
+  font-size: 1.1rem;
+  margin: 0.3rem 0;
+}
+
+.student-card p {
+  margin: 0.2rem 0;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.student-card a {
+  color: #2a4bd7;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.student-card a:hover {
+  text-decoration: underline;
+}
+
+.content-wrapper {
+  padding-left: 20px; 
+}
+
+
