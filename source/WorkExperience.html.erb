@@ -9,10 +9,7 @@ title: "Work Experience"
   <h1>Work Experience</h1>
 
   <% list =
-      data['work_experience'] ||     # 推荐文件名：data/work_experience.yml
-      data['workexperience']  ||     # 兼容：data/workexperience.yml
-      data['WorkExperience']  ||     # 兼容：data/WorkExperience.yml
-      [] %>
+      data['work_experience'] || [] %>
 
   <% groups = list.group_by { |w| w['condition'].to_s.strip } %>
   <% order  = ['still_working', 'passed'] %>
@@ -29,8 +26,17 @@ title: "Work Experience"
       <% items.each_with_index do |w, i| %>
         <article class="we-card" id="we-<%= key %>-<%= i %>">
           <header class="we-head">
-            <% if w['company_name'].to_s.strip != '' %>
-              <h3 class="we-company"><%= w['company_name'] %></h3>
+            <% name = w['company_name'].to_s.strip %>
+            <% href = w['link'].to_s.strip %>
+
+            <% if name != '' %>
+            <h3 class="we-company">
+                <% if href != '' %>
+                <a class="we-company-link" href="<%= href %>" target="_blank" rel="noopener"><%= name %></a>
+                <% else %>
+                <%= name %>
+                <% end %>
+            </h3>
             <% end %>
 
             <% if w['located'].to_s.strip != '' %>
