@@ -4,12 +4,11 @@
   Renders site name and navigation tabs.
   Each tab’s URL is pulled from data.top_banner in top_banner.yml.
 -->
-
 <nav class="top-banner">
-  <!-- 左侧 Logo/站点名，默认指向第一个导航项（Home） -->
-  <a href="<%= data.top_banner.nav.first.url %>" class="tb-left">
-    Oliver Shen
-  </a>
+  <!-- 左侧：改成 label，点击折叠/展开左栏 -->
+  <label for="leftBarDropdown" class="tb-left" role="button" aria-label="Toggle left sidebar">
+    三 Oliver Shen
+  </label>
 
   <ul class="tb-right">
     <% data.top_banner.nav.each do |item| %>
@@ -23,5 +22,6 @@
     <% end %>
   </ul>
 </nav>
+
 
 

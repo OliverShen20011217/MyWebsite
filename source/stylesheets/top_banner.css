@@ -21,6 +21,15 @@
   font-size: 24px; 
   font-weight: bold;
   position: relative;
+  cursor: pointer; 
+  user-select: none;
+}
+
+.tb-toggle-overlay{
+  position: absolute; inset: 0;
+  cursor: pointer;
+  /* 保持透明，不影响视觉 */
+  background: transparent;
 }
 
 .tb-right {

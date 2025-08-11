@@ -1,0 +1,52 @@
+/* /stylesheets/index.css
+   Author: Oliver Shen
+   Page: index.html
+*/
+
+/* 页面主容器（只控制内容区，不影响 left / top） */
+.home-container{
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+
+}
+
+/* Intro */
+.intro h1{ margin: 0 0 8px; }
+.intro p{ margin: 0 0 16px; }
+
+/* Resume 区块 */
+.resume-simple{ margin: 24px 0; }
+.resume-simple h2{ margin: 0 0 12px; }
+
+/* “文件名 + 下载图标”整段下划线（图标也在下划线里） */
+.resume-line{ margin: 8px 0 16px; }
+.resume-link{
+  display: inline-flex;
+  gap: 2px;                 /* 图标更靠近一点 */
+  padding-bottom: 1px;
+  line-height: 1.2;
+}
+.resume-link .icon-download{ width: 18px; height: 18px; transform: translateX(-1px); }
+
+/* 简历图片：自适应宽度，轻边框与阴影 */
+.resume-img{
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(0,0,0,.06);
+}
+
+/* Contact */
+.contact{ margin: 24px 0 40px; }
+.contact h2{ margin: 0 0 8px; }
+.contact p{ margin: 0; }
+
+/* 小屏优化 */
+@media (max-width: 600px){
+  .home-container{ padding: 0 12px; }
+  .resume-link{ gap: 3px; }
+}

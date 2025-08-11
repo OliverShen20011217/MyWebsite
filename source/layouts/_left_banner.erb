@@ -2,51 +2,56 @@
   left_banner.erb
   @author Oliver Shen 8/10/25
 -->
+
+
 <% lb = data.left_banner %>
+<% occ = (lb.Ocupation || lb.Occupation).to_s %>
+<% linkedin = (lb['LinkedIn_URL'] || lb['linkedin_URL']).to_s %>
 
 <div class="leftBar">
-    <img src="<%= lb.photo_url %>" alt="<%= lb.Name %> photo"
-     class="professor-photo" width="260" height="260">
+  <img src="<%= lb.photo_url.to_s %>" alt="<%= lb.Name.to_s %> photo"
+       class="professor-photo" width="260" height="260">
 
-    <h2 class="name" style="margin: 0 0 8px 0;">
-      <a href="<%= (data.top_banner&.nav&.first&.url || '/index.html') %>" class="name-link">
-        <%= lb.Name %>
-      </a>
-    </h2>
+  <h2 class="name" style="margin: 0 0 8px 0;">
+    <a href="<%= (data.top_banner&.nav&.first&.url || '/index.html') %>" class="name-link">
+      <%= lb.Name.to_s %>
+    </a>
+  </h2>
 
-    <div class="basic-info">
-      <% occ = lb.Ocupation || lb.Occupation %>
-      <% if occ %><div class="bi-line"><%= occ %></div><% end %>
-      <% if lb.School %><div class="bi-line"><%= lb.School %></div><% end %>
-      <% if lb.Major %><div class="bi-line"><%= lb.Major %></div><% end %>
-      <% if lb.Degree %><div class="bi-line"><%= lb.Degree %></div><% end %>
-      <% if lb.Graduation_Year %><div class="bi-line">Graduation: <%= lb.Graduation_Year %></div><% end %>
-    </div>
+  <div class="basic-info">
+    <div class="bi-line"><%= occ %></div>
+    <div class="bi-line"><%= lb.School.to_s %></div>
+    <div class="bi-line"><%= lb.Major.to_s %></div>
+    <div class="bi-line"><%= lb.Degree.to_s %></div>
+    <div class="bi-line">Graduation: <%= lb.Graduation_Year.to_s %></div>
+  </div>
 
-    <ul class="unbulleted">
-      <% if lb.Phone %>
-        <% tel = lb.Phone.gsub(/\D/, '') %>
-        <li>📞 <span class="item-label">Phone：</span><a href="tel:+<%= tel %>"><%= lb.Phone %></a></li>
-      <% end %>
+  <ul class="unbulleted">
+    <li>📞 <span class="item-label">Phone：</span>
+      <a href="tel:+<%= lb.Phone.to_s.gsub(/\D/, '') %>"><%= lb.Phone.to_s %></a>
+    </li>
 
-      <% if lb.Email %>
-        <li>✉️ <span class="item-label">Email：</span><a class="item-text"><%= lb.Email %></a></li>
-      <% end %>
+    <li>✉️ <span class="item-label">Email：</span>
+      <a class="item-text" href="mailto:<%= lb.Email.to_s %>"><%= lb.Email.to_s %></a>
+    </li>
 
-      <% if lb.Mailing_Address %>
-        <li>📍 <span class="item-label">Address：</span><span class="item-text"><%= lb.Mailing_Address %></span></li>
-      <% end %>
+    <li>📍 <span class="item-label">Address：</span>
+      <span class="item-text"><%= lb.Mailing_Address.to_s %></span>
+    </li>
 
-      <% if lb.Github_URL %>
-        <li>💻 <span class="item-label">Github：</span><a class="pub-link" href="<%= lb.Github_URL %>" target="_blank" rel="noopener">GitHub</a></li>
-      <% end %>
+    <li>
+      💻 <span class="item-label">Links：</span>
+      <a class="pub-link" href="<%= lb['Github_URL'].to_s %>" target="_blank" rel="noopener">GitHub</a>
+      <span> </span> <a class="item-text">,</a> <span> </span>
+      <a class="pub-link" href="<%= linkedin %>" target="_blank" rel="noopener">LinkedIn</a>
+    </li>
 
-      <% if lb.Work_authorization %>
-        <li>🛂 <span class="item-label">Work Authorization：</span><span class="item-text"><%= lb.Work_authorization %></span></li>
-      <% end %>
+    <li>🛂 <span class="item-label">Work Authorization：</span>
+      <span class="item-text"><%= lb.Work_authorization.to_s %></span>
+    </li>
 
-      <% if lb.nationality %>
-        <li>🇨🇳 <span class="item-label">Nationality：</span><span class="item-text"><%= lb.nationality %></span></li>
-      <% end %>
-    </ul>
+    <li>🇨🇳 <span class="item-label">Nationality：</span>
+      <span class="item-text"><%= lb.nationality.to_s %></span>
+    </li>
+  </ul>
 </div>
