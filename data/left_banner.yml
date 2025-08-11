@@ -1,0 +1,17 @@
+# left_banner.yml
+# Author Oliver Shen 8/10/2025
+# Navigation link definitions for the Left Banner partial
+
+photo_url: "/images/me.jpg"
+Name: Zheyu(Oliver) Shen
+Ocupation: Student
+School: Ohio State University
+Major: Computer Information Science
+Degree: Bachelor of Science
+Graduation_Year: 2026.05
+Phone: "+1 330 619 2028"
+Email: "shenzheyu1217@gmail.com"
+Mailing_Address: "1108 Juniper Ave, Akron, OH 44310"
+Github_URL:	"https://github.com/OliverShen20011217"
+nationality: "Chinese"
+Work_authorization: U.S. work authorized. No sponsorship required.

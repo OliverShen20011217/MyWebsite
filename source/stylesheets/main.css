@@ -45,30 +45,7 @@ input:checked ~ .maingrid .leftGrid{
 	display: none;
 }
 
-/* Created Sam Cubberly
-Represents 3 variations of gray text, gray3 being the darkest, gray1 being the lightest */
-.gray3{
-        color: #666666;
-}
-.gray2{
-        color: #999999;
-}
-.gray1{
-        color: #CCCCCC;
-}
 
-/* Added by Sam Cubberly 6 27 to give the background colors */
-.grayBack3{
-	background-color: #666666;
-}
-.grayBack2{
-	background-color: #999999;
-}
-.grayBack1{
-	background-color: #CCCCCC;
-
-}
-/* Sam's contributions stop here */
 
 /* Added by Oliver Shen 6/26 */
 .pub-link {

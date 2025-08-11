@@ -1,0 +1,27 @@
+<!--
+  @author Oliver Shen 6/23
+  _topbanner.erb – Top Banner partial for Prof. Eric Fosler-Lussier’s site
+  Renders site name and navigation tabs.
+  Each tab’s URL is pulled from data.top_banner in top_banner.yml.
+-->
+
+<nav class="top-banner">
+  <!-- 左侧 Logo/站点名，默认指向第一个导航项（Home） -->
+  <a href="<%= data.top_banner.nav.first.url %>" class="tb-left">
+    Oliver Shen
+  </a>
+
+  <ul class="tb-right">
+    <% data.top_banner.nav.each do |item| %>
+      <% current = current_page.url.to_s.sub(%r{\/+$}, '') %>
+      <% target  = item.url.to_s.sub(%r{\/+$}, '') %>
+      <li>
+        <a href="<%= item.url %>" class="<%= current == target ? 'active' : '' %>">
+          <%= item.label %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</nav>
+
+

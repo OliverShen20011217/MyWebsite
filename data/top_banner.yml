@@ -1,10 +1,23 @@
-# top_banner_qualifications.yml
-# Author Oliver Shen 06/23/2025
+# top_banner.yml
+# Author Oliver Shen 8/10/2025
 # Navigation link definitions for the Top Banner partial
 # Each key represents a tab name and its value is the corresponding page URL.
-home: "/index.html"
-bio: "/bio.html"
-fun_stuff: "/fun_stuff.html"
-research: "/research.html"
-teaching: "/teaching.html"
-publications: "/publications.html"
+# Navigation link definitions for the Top Banner
+# Author: Oliver Shen 2025-08-10
+
+nav:
+  - label: "Home"
+    url: "/index.html"
+  - label: "Education"
+    url: "/education.html"
+  - label: "Work Experience"
+    url: "/WorkExperience.html"
+  - label: "Projects"
+    url: "/projects.html"
+  - label: "Leadership & Involvement"
+    url: "/LeadershipInvolvement.html"
+  - label: "Honors & Skills"
+    url: "/HonorsSkills.html"
+  - label: "My Story"
+    url: "/MyStory.html"
+

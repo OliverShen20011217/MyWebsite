@@ -1,0 +1,52 @@
+<!--
+  left_banner.erb
+  @author Oliver Shen 8/10/25
+-->
+<% lb = data.left_banner %>
+
+<div class="leftBar">
+    <% if lb.photo_url %>
+      <img src="<%= lb.photo_url %>" alt="<%= lb.Name %> photo" class="professor-photo">
+    <% end %>
+
+    <h2 class="name" style="margin: 0 0 8px 0;">
+      <a href="<%= (data.top_banner&.nav&.first&.url || '/index.html') %>" class="name-link">
+        <%= lb.Name %>
+      </a>
+    </h2>
+
+    <% occ = lb.Ocupation || lb.Occupation %>
+    <% if occ %><div class="gray3"><%= occ %></div><% end %>
+    <% if lb.School %><div class="gray3"><%= lb.School %></div><% end %>
+    <% if lb.Major || lb.Degree %>
+      <div class="gray2"><%= [lb.Major, lb.Degree].compact.join(' • ') %></div>
+    <% end %>
+    <% if lb.Graduation_Year %><div class="gray2">Graduation: <%= lb.Graduation_Year %></div><% end %>
+
+    <ul class="unbulleted">
+      <% if lb.Phone %>
+        <% tel = lb.Phone.gsub(/\D/, '') %>
+        <li>📞 <a href="tel:+<%= tel %>"><%= lb.Phone %></a></li>
+      <% end %>
+
+      <% if lb.Email %>
+        <li>✉️ <a class="pub-link" href="mailto:<%= lb.Email %>"><%= lb.Email %></a></li>
+      <% end %>
+
+      <% if lb.Mailing_Address %>
+        <li>📍 <%= lb.Mailing_Address %></li>
+      <% end %>
+
+      <% if lb.Github_URL %>
+        <li>💻 <a class="pub-link" href="<%= lb.Github_URL %>" target="_blank" rel="noopener">GitHub</a></li>
+      <% end %>
+
+      <% if lb.Work_authorization %>
+        <li>🛂 <%= lb.Work_authorization %></li>
+      <% end %>
+
+      <% if lb.nationality %>
+        <li>🌎 <%= lb.nationality %></li>
+      <% end %>
+    </ul>
+</div>

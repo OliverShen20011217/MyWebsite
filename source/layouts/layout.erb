@@ -4,31 +4,34 @@
 
 <!-- @Edit Sam Cubberly - added the maingrid class to the bio and the content -->
 <!DOCTYPE html>
-<html>
-	<head>
-		<meta charset= "UTF-8">
-		<title>Eric Fosler-Lussier: <%= current_page.data.title %> </title>
-		<% data.stylesheets.each do |css_name, file_path| %>
-		<link rel = "stylesheet" href=<%=file_path%>>
-		<%end%>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= current_page.data.title || "Oliver Shen" %></title>
+  <link rel="stylesheet" href="/stylesheets/site.css">
+</head>
+<body>
+  <!-- 顶部导航（整页通用） -->
+  <%= partial "layouts/top_banner" %>
 
-	</head>
-	<body>
-		<%= partial "partials/topbanner" %> <!-- Oliver -->
-		
-		<!-- Sam Cubberly - Added toggle button with main grid to hide the bio on the side of page -->
-		<%= partial "partials/toggleButton" %>
+  <!-- 左栏开关：和 .maingrid 是兄弟关系，匹配你现有的 CSS 选择器 -->
+  <input type="checkbox" id="leftBarDropdown">
 
-		<!-- Sam Cubberly - Added the maingrid to separate the partials from the body content -->
-		<div class= "maingrid">
-			<div class = "leftGrid grayBack1">
-		    		<%= partial "partials/left_banner_qualifications" %> <!--  Yunfeng -->
-    				<%= partial "partials/leftBarContact.html" %> <!-- Samuel -->
-			</div>
-			<div class = "rightGrid">
-				<%= yield %>
-			</div>
-		</div>
-			
-	</body>
+  <!-- 主栅格：左列=左栏，右列=页面内容 -->
+  <div class="maingrid">
+    <aside class="leftGrid">
+      <%= partial "layouts/left_banner" %>
+    </aside>
+
+    <main class="rightGrid">
+      <%= yield %>
+    </main>
+  </div>
+</body>
 </html>
+
+
+<link rel="stylesheet" href="/stylesheets/main.css"> 
+<link rel="stylesheet" href="/stylesheets/top_banner.css"> 
+<link rel="stylesheet" href="/stylesheets/left_banner.css">
