@@ -4,8 +4,8 @@
 
 - condition: still_working
   company_name: Resilience Inc.  
-  located: Columbus, Ohio, USA                                                                                                                
-  position: AI/Frontend Engineer Intern  
+  located: Tampa, Florida, USA                                                                                                                
+  position: AI/Frontend Engineer Intern  - remote
   time: June 2025 - until now     
   description: 
     - Integrated a lightweight AI-powered recommendation module, enhancing personalization and user engagement.
@@ -20,10 +20,10 @@
   position: Owner   
   time: June 2023 - until now     
   description:                                                                                                                      
-    - Manage TikTok pet store operations, including sourcing, inventory, and order fulfillment
+    - Manage Ebay pet store operations, including sourcing, inventory, and order fulfillment
     - Use Python and Pandas to scrape competitor pricing and stock, guiding selection and pricing strategies
     - Developed an automated sales dashboard with Python and Matplotlib to track sales KPIs and trends
-    - Plan and execute TikTok marketing campaigns, achieving a 12% conversion rate
+    - Plan and execute Ebay marketing campaigns, achieving a 12% conversion rate
     - Analyze sales data to optimize product mix and pricing, driving 20% month-over-month revenue growth
 
 - condition: still_working
