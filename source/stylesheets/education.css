@@ -1,0 +1,53 @@
+.education-container{
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+.education-container h1{ margin: 0 0 12px; }
+
+/* 分组标题 */
+.edu-section{ margin-top: 18px; }
+.edu-section-title{
+  margin: 12px 0 8px;
+  font-size: 22px;
+  border-left: 4px solid #d1d5db;
+  padding-left: 10px;
+}
+
+/* 卡片 */
+.edu-card{
+  background: #f7f8fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 12px 0;
+}
+
+/* 头部：学校名 + 时间/地点 */
+.edu-head{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px 12px;
+  align-items: center;
+}
+.edu-school{
+  margin: 0;
+  line-height: 1.25;
+  word-break: break-word;
+}
+.edu-meta-top{ text-align: right; font-size: 0.95em; }
+.edu-time, .edu-loc{ white-space: nowrap; }
+
+/* 列表 */
+.edu-list{ list-style: none; margin: 10px 0 0; padding: 0; }
+.edu-list li{ margin: 6px 0; line-height: 1.5; }
+.label{ font-weight: 700; margin-right: .35em; }
+.edu-notes{ color: #333; }
+
+/* 小屏堆叠 */
+@media (max-width: 720px){
+  .edu-head{ grid-template-columns: 1fr; }
+  .edu-meta-top{ text-align: left; }
+  .edu-time, .edu-loc{ white-space: normal; }
+}
