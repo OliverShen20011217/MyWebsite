@@ -5,9 +5,8 @@
 <% lb = data.left_banner %>
 
 <div class="leftBar">
-    <% if lb.photo_url %>
-      <img src="<%= lb.photo_url %>" alt="<%= lb.Name %> photo" class="professor-photo">
-    <% end %>
+    <img src="<%= lb.photo_url %>" alt="<%= lb.Name %> photo"
+     class="professor-photo" width="260" height="260">
 
     <h2 class="name" style="margin: 0 0 8px 0;">
       <a href="<%= (data.top_banner&.nav&.first&.url || '/index.html') %>" class="name-link">
@@ -15,38 +14,39 @@
       </a>
     </h2>
 
-    <% occ = lb.Ocupation || lb.Occupation %>
-    <% if occ %><div class="gray3"><%= occ %></div><% end %>
-    <% if lb.School %><div class="gray3"><%= lb.School %></div><% end %>
-    <% if lb.Major || lb.Degree %>
-      <div class="gray2"><%= [lb.Major, lb.Degree].compact.join(' • ') %></div>
-    <% end %>
-    <% if lb.Graduation_Year %><div class="gray2">Graduation: <%= lb.Graduation_Year %></div><% end %>
+    <div class="basic-info">
+      <% occ = lb.Ocupation || lb.Occupation %>
+      <% if occ %><div class="bi-line"><%= occ %></div><% end %>
+      <% if lb.School %><div class="bi-line"><%= lb.School %></div><% end %>
+      <% if lb.Major %><div class="bi-line"><%= lb.Major %></div><% end %>
+      <% if lb.Degree %><div class="bi-line"><%= lb.Degree %></div><% end %>
+      <% if lb.Graduation_Year %><div class="bi-line">Graduation: <%= lb.Graduation_Year %></div><% end %>
+    </div>
 
     <ul class="unbulleted">
       <% if lb.Phone %>
         <% tel = lb.Phone.gsub(/\D/, '') %>
-        <li>📞 <a href="tel:+<%= tel %>"><%= lb.Phone %></a></li>
+        <li>📞 <span class="item-label">Phone：</span><a href="tel:+<%= tel %>"><%= lb.Phone %></a></li>
       <% end %>
 
       <% if lb.Email %>
-        <li>✉️ <a class="pub-link" href="mailto:<%= lb.Email %>"><%= lb.Email %></a></li>
+        <li>✉️ <span class="item-label">Email：</span><a class="item-text"><%= lb.Email %></a></li>
       <% end %>
 
       <% if lb.Mailing_Address %>
-        <li>📍 <%= lb.Mailing_Address %></li>
+        <li>📍 <span class="item-label">Address：</span><span class="item-text"><%= lb.Mailing_Address %></span></li>
       <% end %>
 
       <% if lb.Github_URL %>
-        <li>💻 <a class="pub-link" href="<%= lb.Github_URL %>" target="_blank" rel="noopener">GitHub</a></li>
+        <li>💻 <span class="item-label">Github：</span><a class="pub-link" href="<%= lb.Github_URL %>" target="_blank" rel="noopener">GitHub</a></li>
       <% end %>
 
       <% if lb.Work_authorization %>
-        <li>🛂 <%= lb.Work_authorization %></li>
+        <li>🛂 <span class="item-label">Work Authorization：</span><span class="item-text"><%= lb.Work_authorization %></span></li>
       <% end %>
 
       <% if lb.nationality %>
-        <li>🌎 <%= lb.nationality %></li>
+        <li>🇨🇳 <span class="item-label">Nationality：</span><span class="item-text"><%= lb.nationality %></span></li>
       <% end %>
     </ul>
 </div>

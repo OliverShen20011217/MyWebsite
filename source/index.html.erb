@@ -1,6 +1,7 @@
 ---
 title: "Home"
 ---
+<link rel="stylesheet" href="/stylesheets/index.css"> 
 
 <main class="home-container">
   <section class="intro">
@@ -11,14 +12,30 @@ title: "Home"
     </p>
   </section>
 
-  <section class="featured">
-    <h2>Featured Projects</h2>
-    <ul>
-      <li><a href="/projects.html#project1">AI Research on Visual Perception</a></li>
-      <li><a href="/projects.html#project2">Book Exchange Platform</a></li>
-      <li><a href="/projects.html#project3">Adversarial ML Vulnerability Assessment</a></li>
-    </ul>
+  <section class="resume-simple">
+    <h2>Here is my Resume:</h2>
+
+    <p class="resume-line">
+      <a class="resume-link" href="/files/OliverShenResume.pdf" download>
+        OliverShenResume.pdf
+        <!-- 下载图标（内联SVG，纯CSS也能控制样式） -->
+        <svg class="icon-download" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3v10m0 0l4-4m-4 4l-4-4M5 21h14a2 2 0 002-2v-3M3 16v3a2 2 0 002 2" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </p>
+
+    <!-- 直接展示图片；点击图片也能打开PDF -->
+    <a href="/files/OliverShenResume.pdf" target="_blank" rel="noopener">
+      <img
+        src="/images/OliverShenResume.jpg"
+        alt="Oliver Shen Resume"
+        class="resume-img"
+        width="1206" height="1550" 
+      >
+    </a>
   </section>
+
 
   <section class="contact">
     <h2>Get in Touch</h2>
@@ -27,5 +44,6 @@ title: "Home"
       or <a href="mailto:shenzheyu1217@gmail.com">send me an email</a>.
     </p>
   </section>
+
 </main>
 

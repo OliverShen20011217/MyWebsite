@@ -1,0 +1,13 @@
+/* 让下划线包住文本和图标 */
+.resume-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  line-height: 1.2;
+}
+
+/* 图标大小可调 */
+.resume-link .icon-download{
+  width: 18px;
+  height: 18px;
+}

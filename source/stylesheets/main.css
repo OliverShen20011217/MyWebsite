@@ -13,16 +13,7 @@ Edited Oliver Shen 6 26 to add herp link and homepage section orginated function
 } /*--end of contribution--*/
 
 /* Created by Sam Cubberly. Gives styling for the main grid that divides web page */
-.maingrid {
-    display: grid;
-    grid-template-columns: 1fr 3fr; /*@edited Anshuman Ranjan: changed size of right-grid*/
-    grid-template-rows: 1fr;
-}
 
-.maingrid > div{
-    min-width: 100%;
-    overflow-wrap: break-word;
-}
 
 input#leftBarDropdown{
 	width: 0;
