@@ -3,54 +3,62 @@ layout: layout
 title: "Education"
 ---
 
-<link rel="stylesheet" href="/stylesheets/education.css">
+<!-- 复用 Work Experience 的样式 -->
+<link rel="stylesheet" href="/stylesheets/work_experience.css">
 
-<main class="education-container">
+<main class="we-container">
   <h1>Education</h1>
 
   <% raw_list = (data['education'] || []) %>
   <% groups = raw_list.group_by { |e| e['Title'].to_s.strip } %>
 
-  <% order = ['University', 'High school', 'Junior High School'] %>
+  <% order = ['University', 'High school', 'Middle School', 'Junior High School'] %>
   <% ordered_keys = order + (groups.keys - order) %>
 
   <% ordered_keys.each do |title| %>
     <% list = groups[title] %>
     <% next if !list || list.empty? %>
 
-    <section class="edu-section" id="<%= title.downcase.gsub(/\s+/,'-') %>">
-      <h2 class="edu-section-title"><%= title %></h2>
+    <section class="we-section" id="<%= title.downcase.gsub(/\s+/, '-').gsub(/[^\w-]/, '') %>">
+      <h2 class="we-section-title"><%= title %></h2>
 
       <% list.each_with_index do |ed, i| %>
-        <article class="edu-card" id="<%= "#{title.downcase.gsub(/\s+/,'-')}-#{i}" %>">
-          <header class="edu-head">
-            <% if ed['school_name'].to_s.strip != '' %>
-              <h3 class="edu-school"><%= ed['school_name'] %></h3>
+        <% school   = ed['school_name'].to_s.strip %>
+        <% located  = ed['located'].to_s.strip %>
+        <% time     = ed['time'].to_s.strip %>
+        <% majorpos = ed['major'].to_s.strip.presence || [ed['Degree'], ed['Major']].compact.join(' • ') %>
+
+        <article class="we-card" id="<%= "#{title.downcase.gsub(/\s+/, '-').gsub(/[^\w-]/, '')}-#{i}" %>">
+          <header class="we-head">
+            <% if school != '' %>
+              <h3 class="we-company"><%= school %></h3>
             <% end %>
-            <div class="edu-meta-top">
-              <% if ed['time'].to_s.strip != '' %>
-                <div class="edu-time">📅 <%= ed['time'] %></div>
-              <% end %>
-              <% if ed['located'].to_s.strip != '' %>
-                <div class="edu-loc">📍 <%= ed['located'] %></div>
-              <% end %>
-            </div>
+
+            <% if located != '' %>
+              <div class="we-loc">📍 <%= located %></div>
+            <% end %>
+
+            <% if majorpos.to_s.strip != '' %>
+              <div class="we-pos"><%= majorpos %></div>
+            <% end %>
+
+            <% if time != '' %>
+              <div class="we-time">📅 <%= time %></div>
+            <% end %>
           </header>
 
-          <ul class="edu-list">
-            <% if ed['major'].to_s.strip != '' %>
-              <li><span class="label">Major：</span><%= ed['major'] %></li>
-            <% end %>
-            <% if ed['Specialization'].to_s.strip != '' %>
-              <li><span class="label">Specialization：</span><%= ed['Specialization'] %></li>
-            <% end %>
-            <% if ed['GPA'].to_s.strip != '' %>
-              <li><span class="label">GPA：</span><%= ed['GPA'] %></li>
-            <% end %>
-            <% if ed['notes'].to_s.strip != '' %>
-              <li class="edu-notes"><span class="label">Notes：</span><%= ed['notes'] %></li>
-            <% end %>
-          </ul>
+          <% details = [] %>
+          <% details << "Specialization: #{ed['Specialization']}" if ed['Specialization'].to_s.strip != '' %>
+          <% details << "GPA: #{ed['GPA']}"                     if ed['GPA'].to_s.strip != '' %>
+          <% details << "Notes: #{ed['notes']}"                 if ed['notes'].to_s.strip != '' %>
+
+          <% if details.any? %>
+            <ul class="we-desc">
+              <% details.each do |d| %>
+                <li><%= d %></li>
+              <% end %>
+            </ul>
+          <% end %>
         </article>
       <% end %>
     </section>

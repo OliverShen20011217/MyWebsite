@@ -1,0 +1,47 @@
+# honors_skills.yml
+# Author Oliver Shen 8/11/2025
+# Honors and Skills details for the Honors & Skills page
+- title: Honors
+  items:
+    - Dean’s List (The Ohio State University, Spring 2024)
+
+- title: Programming
+  items:
+    - Python (pandas, NumPy, Matplotlib, Jupyter) — data wrangling, automation, scraping
+    - Java
+    - C
+    - ERB + HTML/CSS for static sites (Middleman)
+    - JavaScript (React Native, Node.js) — web and mobile app development
+
+- title: Data & Databases
+  items:
+    - SQL — SQLite (joins, aggregates, indexes)
+    - NoSQL — MongoDB (document modeling, aggregation pipelines)
+    - ETL — CSV and JSON import, cleaning, feature preparation
+
+- title: Machine Learning / AI
+  items:
+    - Classical and Deep Learning — scikit-learn, PyTorch
+    - Sequence and Time Series — LSTM and Transformers (achieved >90% accuracy in forecasting and fault-prediction projects)
+    - Computer Vision — OpenCV for preprocessing, augmentation, object-detection pipelines
+    - Model evaluation — train/validation split, metrics such as accuracy and recall; inference optimization
+
+- title: Computer Vision & Robotics
+  items:
+    - Built and optimized vision perception modules, reducing latency and improving stability
+    - Integrated perception into robots, improving autonomy and overall performance
+
+- title: Data Analytics & Dashboards
+  items:
+    - Competitive price and stock scraping with Python + pandas for product selection and pricing
+    - Automated sales dashboard with Matplotlib tracking KPIs and trends
+
+- title: Product & Growth
+  items:
+    - TikTok commerce campaigns — planned and executed, ~12% conversion
+    - Data-driven growth — optimized product mix and pricing, ~20% MoM revenue growth
+
+- title: Leadership & Teamwork
+  items:
+    - Led a 15-member team (OSU dining) including scheduling, operations, health compliance; improved efficiency and satisfaction
+    - Cross-functional collaboration with operations and engineering to ship data and model features

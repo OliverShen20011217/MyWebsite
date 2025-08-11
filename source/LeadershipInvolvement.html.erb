@@ -1,3 +1,64 @@
 ---
-title: "LeadershipInvolvement"
+layout: layout
+title: "Leadership & Involvement"
 ---
+
+<!-- 复用 work_experience.css 的样式（.we-* 类） -->
+<link rel="stylesheet" href="/stylesheets/work_experience.css">
+
+<main class="we-container">
+  <h1>Leadership & Involvement</h1>
+
+  <% list =
+      data['leadership_involvement'] ||   # 推荐：data/leadership_involvement.yml
+      data['LeadershipInvolvement']  ||   # 兼容大小写
+      data['leadership']             ||   # 兼容其他命名
+      [] %>
+
+  <% groups = list.group_by { |a| a['condition'].to_s.strip } %>
+  <% order  = ['still_working', 'passed'] %>
+  <% labels = { 'still_working' => 'Currently Involved', 'passed' => 'Past Involvement' } %>
+  <% ordered_keys = order + (groups.keys - order) %>
+
+  <% ordered_keys.each do |key| %>
+    <% items = groups[key] %>
+    <% next if !items || items.empty? %>  <!-- 没有该分组就不显示小标题 -->
+
+    <section class="we-section" id="<%= key %>">
+      <h2 class="we-section-title"><%= labels[key] || key.to_s.gsub('_',' ').capitalize %></h2>
+
+      <% items.each_with_index do |a, i| %>
+        <article class="we-card" id="li-<%= key %>-<%= i %>">
+          <header class="we-head">
+            <% if a['name'].to_s.strip != '' %>
+              <h3 class="we-company"><%= a['name'] %></h3>
+            <% end %>
+
+            <% if a['located'].to_s.strip != '' %>
+              <div class="we-loc">📍 <%= a['located'] %></div>
+            <% end %>
+
+            <% if a['position'].to_s.strip != '' %>
+              <div class="we-pos"><%= a['position'] %></div>
+            <% end %>
+
+            <% if a['time'].to_s.strip != '' %>
+              <div class="we-time">📅 <%= a['time'] %></div>
+            <% end %>
+          </header>
+
+          <% descs = (a['description'] || a['descriptions'] || []) %>
+          <% descs = [descs] if descs.is_a?(String) %>
+          <% if descs.any? %>
+            <ul class="we-desc">
+              <% descs.each do |d| %>
+                <% next if d.to_s.strip == '' %>
+                <li><%= d %></li>
+              <% end %>
+            </ul>
+          <% end %>
+        </article>
+      <% end %>
+    </section>
+  <% end %>
+</main>

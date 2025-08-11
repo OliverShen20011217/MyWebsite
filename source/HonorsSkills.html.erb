@@ -1,3 +1,33 @@
 ---
-title: "HonorsSkills"
+layout: layout
+title: "Honors & Skills"
 ---
+
+<!-- 如需单独样式，可自行在 /stylesheets 下新建 honors_skills.css 并引入
+<link rel="stylesheet" href="/stylesheets/honors_skills.css">
+-->
+<link rel="stylesheet" href="/stylesheets/honors_skills.css"> 
+<main class="hs-container">
+  <h1>Honors & Skills</h1>
+
+  <% sections = (data['honors_skills'] || data[:honors_skills] || []) %>
+
+  <% sections.each_with_index do |sec, i| %>
+    <% title = sec['title'].to_s %>
+    <% items = sec['items'].is_a?(Array) ? sec['items'] : [sec['items']].compact %>
+    <section
+      class="hs-section"
+      id="<%= title.downcase.gsub(/\s+/, '-').gsub(/[^\w-]/, '') %>">
+      <h2 class="hs-section-title"><%= title %></h2>
+
+      <% if items.any? %>
+        <ul class="hs-list">
+          <% items.each do |item| %>
+            <% next if item.to_s.strip == '' %>
+            <li><%= item %></li>
+          <% end %>
+        </ul>
+      <% end %>
+    </section>
+  <% end %>
+</main>

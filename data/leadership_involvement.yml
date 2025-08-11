@@ -1,0 +1,38 @@
+
+- condition: passed
+  name: RoboX Club                                                                                                      
+  located: State College, Pennsylvania, USA                                                                                         
+  position: Computer Vision Department Member 
+  time: September 2021 - April 2023                                                                                                
+  description:                                                                                                                      
+    - Designed and optimized vision algorithms, enhancing real-time robot accuracy and efficiency.
+    - Integrated computer vision systems into autonomous robotic solutions for competitive events.
+    - Developed neural networks with OpenCV for dynamic object recognition.
+
+- condition: passed
+  name: Ohio State University Chinese Students and Scholars Society
+  located: Columbus, Ohio, USA
+  position: Leader of Planning Department
+  time: April 2024 - April 2025
+  description:
+    - Planned various activities and wrote comprehensive planning schemes; successfully led and held several large-scale events.
+    - Spearheaded departmental coordination, leading member tasks and facilitating inter-department collaboration for seamless event execution.
+
+- condition: passed
+  name: Penn State University Chinese Students and Scholars Association
+  located: State College, Pennsylvania, USA
+  position: Leader of Web Department
+  time: March 2023 - August 2023
+  description:
+    - Responsible for development and maintenance of the CSSA WeChat mini program and website.
+    - Planned and organized multiple e-sports competitions; led joint tournaments with OSU and MSU student unions.
+
+- condition: passed
+  name: Asian American Christian Fellowship
+  located: State College, Pennsylvania, USA
+  position: Member
+  time: September 2021 - March 2023
+  description:
+    - Cultivated a robust network and fostered interpersonal connections within the fellowship community.
+    - Contributed to volunteer efforts, supporting community outreach and service programs.
+
