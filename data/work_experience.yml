@@ -1,0 +1,59 @@
+# WorkExperience.yml
+# Author Oliver Shen 8/11/2025
+# Work experience details for the Work Experience page
+
+- condition: still_working
+  company_name: Resilience Inc.  
+  located: Columbus, Ohio, USA                                                                                                                
+  position: AI/Frontend Engineer Intern  
+  time: June 2025 - until now     
+  description: 
+    - Integrated a lightweight AI-powered recommendation module, enhancing personalization and user engagement.
+    - Designed and developed responsive React Native UI components with consistent styling and smooth navigation.
+    - Implemented state management and reusable layouts to streamline multi-screen workflows.
+    - Optimized app performance by reducing image load time and improving UI rendering efficiency.
+    - Collaborated with backend developers to connect APIs and ensure seamless data flow across screens.
+
+- condition: still_working
+  company_name: Lucky Cookie LLC  
+  located: Columbus, Ohio, USA                                                                                                                
+  position: Owner   
+  time: June 2023 - until now     
+  description:                                                                                                                      
+    - Manage TikTok pet store operations, including sourcing, inventory, and order fulfillment
+    - Use Python and Pandas to scrape competitor pricing and stock, guiding selection and pricing strategies
+    - Developed an automated sales dashboard with Python and Matplotlib to track sales KPIs and trends
+    - Plan and execute TikTok marketing campaigns, achieving a 12% conversion rate
+    - Analyze sales data to optimize product mix and pricing, driving 20% month-over-month revenue growth
+
+- condition: still_working
+  company_name: Tradition at Morrill in Ohio State University                                                                        
+  located: Columbus, Ohio, USA                                                                                                 
+  time: September 2023 - until now
+  position: Student Lead   
+  description:                                                                                                           
+    - Led a 15-member team to deliver exceptional customer service, boosting student satisfaction in the dining hall. 
+    - Managed team schedules and operations, ensured health standards, and boosted efficiency.
+
+
+- condition: passed
+  company_name: Chinese Academy of Sciences, Institute of Automation                                                               
+  located: Beijing, China
+  position: AI Research Intern            
+  time: June 2024 - August 2024                                                                                             
+  description: 
+    - Developed and optimized AI visual perception modules, improving accuracy and response time.
+    - Proposed and implemented fault prediction algorithms, achieving over 90% diagnostic accuracy.
+    - Built and optimized CNN and LSTM models, outperforming traditional methods.
+    - Applied Transformer model for time-series prediction, achieving >90% accuracy on multiple datasets.
+    - Assisted in data preprocessing and analysis for AI research projects, supporting team findings.
+
+
+- condition: passed
+  company_name: Penn State Bakery     
+  located: University Park, Pennsylvania, USA                                                                                          
+  position: Baker                      
+  time: January 2023 - May 2023    
+  description:                                                                                            
+    - Mastered diverse baking techniques, consistently producing various high-quality breads and pastries. 
+    - Streamlined baking processes, reducing preparation times and enhancing overall kitchen efficiency.

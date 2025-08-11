@@ -1,56 +1,61 @@
 ---
 layout: layout
-title: "Education"
+title: "Work Experience"
 ---
 
-<link rel="stylesheet" href="/stylesheets/education.css">
+<link rel="stylesheet" href="/stylesheets/work_experience.css">
 
-<main class="education-container">
-  <h1>Education</h1>
+<main class="we-container">
+  <h1>Work Experience</h1>
 
-  <% raw_list = (data['education'] || []) %>
-  <% groups = raw_list.group_by { |e| e['Title'].to_s.strip } %>
+  <% list =
+      data['work_experience'] ||     # 推荐文件名：data/work_experience.yml
+      data['workexperience']  ||     # 兼容：data/workexperience.yml
+      data['WorkExperience']  ||     # 兼容：data/WorkExperience.yml
+      [] %>
 
-  <% order = ['University', 'High school', 'Junior High School'] %>
+  <% groups = list.group_by { |w| w['condition'].to_s.strip } %>
+  <% order  = ['still_working', 'passed'] %>
+  <% labels = { 'still_working' => 'Currently Working', 'passed' => 'Past Roles' } %>
   <% ordered_keys = order + (groups.keys - order) %>
 
-  <% ordered_keys.each do |title| %>
-    <% list = groups[title] %>
-    <% next if !list || list.empty? %>
+  <% ordered_keys.each do |key| %>
+    <% items = groups[key] %>
+    <% next if !items || items.empty? %>
 
-    <section class="edu-section" id="<%= title.downcase.gsub(/\s+/,'-') %>">
-      <h2 class="edu-section-title"><%= title %></h2>
+    <section class="we-section" id="<%= key %>">
+      <h2 class="we-section-title"><%= labels[key] || key.to_s.gsub('_',' ').capitalize %></h2>
 
-      <% list.each_with_index do |ed, i| %>
-        <article class="edu-card" id="<%= "#{title.downcase.gsub(/\s+/,'-')}-#{i}" %>">
-          <header class="edu-head">
-            <% if ed['school_name'].to_s.strip != '' %>
-              <h3 class="edu-school"><%= ed['school_name'] %></h3>
+      <% items.each_with_index do |w, i| %>
+        <article class="we-card" id="we-<%= key %>-<%= i %>">
+          <header class="we-head">
+            <% if w['company_name'].to_s.strip != '' %>
+              <h3 class="we-company"><%= w['company_name'] %></h3>
             <% end %>
-            <div class="edu-meta-top">
-              <% if ed['time'].to_s.strip != '' %>
-                <div class="edu-time">📅 <%= ed['time'] %></div>
-              <% end %>
-              <% if ed['located'].to_s.strip != '' %>
-                <div class="edu-loc">📍 <%= ed['located'] %></div>
-              <% end %>
-            </div>
+
+            <% if w['located'].to_s.strip != '' %>
+              <div class="we-loc">📍 <%= w['located'] %></div>
+            <% end %>
+
+            <% if w['position'].to_s.strip != '' %>
+              <div class="we-pos"><%= w['position'] %></div>
+            <% end %>
+
+            <% if w['time'].to_s.strip != '' %>
+              <div class="we-time">📅 <%= w['time'] %></div>
+            <% end %>
           </header>
 
-          <ul class="edu-list">
-            <% if ed['major'].to_s.strip != '' %>
-              <li><span class="label">Major：</span><%= ed['major'] %></li>
-            <% end %>
-            <% if ed['Specialization'].to_s.strip != '' %>
-              <li><span class="label">Specialization：</span><%= ed['Specialization'] %></li>
-            <% end %>
-            <% if ed['GPA'].to_s.strip != '' %>
-              <li><span class="label">GPA：</span><%= ed['GPA'] %></li>
-            <% end %>
-            <% if ed['notes'].to_s.strip != '' %>
-              <li class="edu-notes"><span class="label">Notes：</span><%= ed['notes'] %></li>
-            <% end %>
-          </ul>
+          <% descs = (w['descriptions'] || w['description'] || []) %>
+          <% descs = [descs] if descs.is_a?(String) %>
+          <% if descs.any? %>
+            <ul class="we-desc">
+              <% descs.each do |d| %>
+                <% next if d.to_s.strip == '' %>
+                <li><%= d %></li>
+              <% end %>
+            </ul>
+          <% end %>
         </article>
       <% end %>
     </section>

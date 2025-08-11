@@ -1,0 +1,88 @@
+/* Work Experience page — 仅本页样式
+   Author: Oliver Shen
+*/
+
+/* 容器 */
+.we-container{
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+}
+.we-container h1{ margin: 0 0 12px; }
+
+/* 分组小标题：在岗 / 离岗 */
+.we-section{ margin-top: 18px; }
+.we-section-title{
+  margin: 12px 0 8px;
+  font-size: 22px;
+  border-left: 4px solid #d1d5db;
+  padding-left: 10px;
+}
+
+/* 卡片 */
+.we-card{
+  background: #f7f8fa;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 12px 0;
+}
+
+/* 头部：两行两列
+   第1行：公司（左） | 地址（右）
+   第2行：职位（左） | 时间（右）
+*/
+.we-head{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  column-gap: 12px;
+  row-gap: 4px;
+  align-items: center;
+}
+.we-company{
+  grid-column: 1; grid-row: 1;
+  margin: 0;
+  line-height: 1.25;
+  word-break: break-word;
+}
+.we-loc{
+  grid-column: 2; grid-row: 1;
+  text-align: right;
+  white-space: nowrap;
+  font-weight: 700; 
+}
+.we-pos{
+  grid-column: 1; grid-row: 2;
+  font-style: italic;
+  font-weight: 400;           /* 仅强调职位；不改颜色/字号 */
+}
+.we-time{
+  grid-column: 2; grid-row: 2;
+  text-align: right;
+  white-space: nowrap;
+}
+
+/* 描述列表 */
+.we-desc{
+  list-style: disc;
+  margin: 10px 0 0 20px;
+  padding: 0;
+}
+.we-desc li{
+  margin: 6px 0;
+  line-height: 1.55;
+}
+
+/* 小屏：单列竖排 公司→职位→地址→时间 */
+@media (max-width: 720px){
+  .we-head{
+    grid-template-columns: 1fr;
+    row-gap: 6px;
+    align-items: start;
+  }
+  .we-company{ grid-row: 1; }
+  .we-pos{     grid-row: 2; }
+  .we-loc{     grid-row: 3; text-align: left; white-space: normal; }
+  .we-time{    grid-row: 4; text-align: left; white-space: normal; }
+}
