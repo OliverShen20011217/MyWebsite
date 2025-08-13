@@ -50,3 +50,13 @@
   .home-container{ padding: 0 12px; }
   .resume-link{ gap: 3px; }
 }
+
+.open-to-work{
+  display: inline-block;
+  margin: 0;
+  padding: 6px 10px;
+  background: #16a34a;   /* 绿色底 */
+  color: #fff;           /* 白字 */
+  border-radius: 999px;  /* 胶囊形 */
+  font-weight: 800;
+} 

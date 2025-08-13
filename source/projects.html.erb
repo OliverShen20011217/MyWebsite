@@ -1,3 +1,87 @@
 ---
-title: "projects"
+layout: layout
+title: "Projects"
 ---
+
+<!-- 复用 Work Experience 样式 -->
+<link rel="stylesheet" href="/stylesheets/work_experience.css">
+
+<main class="we-container">
+  <h1>Projects</h1>
+
+  <% list =
+      data['projects'] || [] %>
+
+  <% groups = list.group_by { |p| p['category'].to_s.strip.downcase } %>
+  <% order  = ['about this website', 'research', 'projects'] %>
+  <% labels = {
+      'about this website' => 'About This Website',
+      'research'           => 'Research',
+      'projects'           => 'Projects'
+    } %>
+  <% ordered_keys = order + (groups.keys - order) %>
+
+  <% ordered_keys.each do |key| %>
+    <% items = groups[key] %>
+    <% next if !items || items.empty? %>
+
+    <section class="we-section" id="<%= (labels[key] || key).downcase.gsub(/\s+/, '-').gsub(/[^\w-]/, '') %>">
+      <h2 class="we-section-title"><%= labels[key] || key.capitalize %></h2>
+
+      <% items.each_with_index do |p, i| %>
+        <% name    = p['name'].to_s.strip %>
+        <% located = p['located'].to_s.strip %>
+        <% sub     = p['subtitle'].to_s.strip %>
+        <% time    = p['time'].to_s.strip %>
+        <% gh      = p['Github_URL'].to_s.strip %>
+        <% dl      = p['download_URL'].to_s.strip %>
+
+        <article class="we-card" id="proj-<%= key %>-<%= i %>">
+          <header class="we-head">
+            <% if name != '' %>
+              <h3 class="we-company"><%= name %></h3>
+            <% end %>
+
+            <% if located != '' %>
+              <div class="we-loc">📍 <%= located %></div>
+            <% end %>
+
+            <% if sub != '' %>
+              <div class="we-pos"><%= sub %></div>
+            <% end %>
+
+            <% if time != '' %>
+              <div class="we-time">📅 <%= time %></div>
+            <% end %>
+          </header>
+
+          <% descs = (p['description'] || p['descriptions'] || []) %>
+          <% descs = [descs] if descs.is_a?(String) %>
+          <% if descs.any? %>
+            <ul class="we-desc">
+              <% descs.each do |d| %>
+                <% next if d.to_s.strip == '' %>
+                <li><%= d %></li>
+              <% end %>
+            </ul>
+          <% end %>
+
+          <% if gh != '' || dl != '' %>
+            <p class="we-links">
+              <span class="label">Links:&nbsp;&nbsp;</span>
+              <% if gh != '' %>
+                <a href="<%= gh %>" target="_blank" rel="noopener">GitHub</a>
+              <% end %>
+              <% if gh != '' && dl != '' %>
+                <span aria-hidden="true">&nbsp;&nbsp;</span>
+              <% end %>
+              <% if dl != '' %>
+                <a href="<%= dl %>" target="_blank" rel="noopener">Download Zip</a>
+              <% end %>
+            </p>
+          <% end %>
+        </article>
+      <% end %>
+    </section>
+  <% end %>
+</main>

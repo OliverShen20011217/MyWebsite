@@ -1,0 +1,56 @@
+
+- category: About This Website
+  name: Personal Website
+  located: Columbus, Ohio
+  subtitle: Portfolio site
+  time: Aug 2025 
+  description:
+    - Built this site to own my portfolio, control design, and learn production web tooling.
+    - Middleman stack with ERB templates, shared CSS, and YAML data for DRY content.
+    - Open-sourced on GitHub and published via GitHub Pages for a fast, public site.   # 或改为：Open-sourced on GitHub and preparing GitHub Pages deployment to make the site public.
+    - Resolved sticky/width glitches with CSS Grid minmax(0,1fr/3fr) and a CSS-only sidebar toggle.
+    - Unified card UI, resume PDF download, accessible headings/links; updates are one-line YAML edits.
+  Github_URL: https://github.com/OliverShen20011217/OliverShen20011217.github.io
+  download_URL: /source/files/Project-4-MasterRubyInsane-main.zip
+
+
+- category: Research
+  name: Operational Assessment of Adversarial Vulnerabilities in AI-Enabled DoD Systems                   
+  located: Columbus, Ohio
+  subtitle: CIS Reserch Project   
+  time: September 2024 - April 2025                                                                                                  
+  description:
+    - Built adversarial pipeline in Python/PyTorch/OpenCV to apply noise and rotation distortions.
+    - Performed 500 + FGSM attacks (ε 0.02) on ResNet-18 to benchmark model robustness.
+    - Automated end-to-end workflow delivering batch inference under 1 min with structured CSV logging.
+    - Noise cut Top-1 accuracy 15% and combined attacks caused 85% errors; proposed defenses.
+  Github_URL: 
+  download_URL:
+
+
+- category: projects
+  name: Soccer Player Performance Data Analysis Project      
+  located: Columbus, Ohio                                                          
+  subtitle: PSU Data Science Course Project    
+  time: September 2022 – April 2023                                                                              
+  description:
+    - Analyzed over 10,000 football records to enhance decision-making.
+    - Optimized decision tree models, solving overfitting and enhancing accuracy.
+    - Visualized key data trends using scatterplots, bar charts, and pie charts for decision-making.
+    - Ranked top players by goals and assists, using offensive metrics for logical ranking.
+  Github_URL: 
+  download_URL:
+
+
+- category: projects
+  name: Cat-Dog Classifier Project    
+  located: Columbus, Ohio                                                                                                   
+  subtitle: Personal AI Project 
+  time: December 2024                                                                                 
+  description:
+    - Built and deployed a CNN-based image classifier using TensorFlow and Keras with 74% test accuracy.
+    - Deployed real-time image prediction via a Streamlit web app.
+    - Created scatter plots, pie charts, and bar charts to clearly demonstrate player impact.
+    - Integrated feedback logging for incorrect predictions, enabling continuous model improvement.
+  Github_URL: 
+  download_URL:
