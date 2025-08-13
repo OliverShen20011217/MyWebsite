@@ -1,58 +1,19 @@
-/* 
-Created Sam Cubberly, 6 25
-Intention of being able to separate the left content menu from the right content with grid.
 
-Edited Sam Cubberly 6 25 to add button functionality
-
-Edited Oliver Shen 6 26 to add herp link and homepage section orginated functionality
- */
-
- /*@author Anshuman Ranjan*/
 * {
   font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-} /*--end of contribution--*/
-
-/* Created by Sam Cubberly. Gives styling for the main grid that divides web page */
+} 
 
 
-input#leftBarDropdown{
-	width: 0;
-	height: 0;
-	display: none;
-}
-
-input:checked ~ .maingrid{
-	display: grid;
-	grid-template-columns: 1fr;
-	grid-template-rows: 1fr;
-}
-
-/*@author Anshuman Ranjan*/
 .rightGrid{
         background-color: rgb(243, 243, 228);
-} /*--end of contribution--*/
+} 
 
-input:checked ~ .maingrid .leftGrid{
-	display: none;
-}
+/* ========= 基础防抖：防止横向溢出、图片自适应 ========= */
+* { box-sizing: border-box; }
+html, body { width: 100%; overflow-x: hidden; }
+img, svg { max-width: 100%; height: auto; display: block; }
 
 
 
-/* Added by Oliver Shen 6/26 */
-.pub-link {
-  text-decoration: none;   /* Remove underline */
-}
-.pub-link:visited,
-.pub-link:active,
-.pub-link:hover {
-  color: #0000EE;          /* Always classic blue */
-  text-decoration: none;   /* No underline on hover/click/visited */
-}
 
-/* Added by Oliver Shen 6/28 to orginzated recent news and useful stuff section */
-.homepage-flex {
-  display: flex;
-  gap: 1rem;
-}
-.recent-news-box { flex: 2; }
-.useful-stuff-box { flex: 1; }
+

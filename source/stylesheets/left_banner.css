@@ -34,8 +34,8 @@
 .professor-photo{
   display:block;
   margin-top: 10px;
-  width:240px;      /* 想更大就改 240/260 */
-  height:240px;
+  width: clamp(160px, 30vw, 240px);
+  height: clamp(160px, 30vw, 240px);
   border-radius:50%;
   object-fit:cover;
   margin:12px auto 14px; /* 居中 */

@@ -60,3 +60,9 @@
   border-radius: 999px;  /* 胶囊形 */
   font-weight: 800;
 } 
+
+.view-note{
+  margin-top: 6px;
+  color: #80796b;          /* 柔和灰 */
+  font-style: italic; 
+}

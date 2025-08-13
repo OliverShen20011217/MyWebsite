@@ -9,6 +9,7 @@
   top: 0;
   width: 100%;
   z-index: 1000;
+  min-height: 60px;
 }
 
 .tb-left {
@@ -42,6 +43,7 @@
   list-style: none;
   position: relative;
   cursor: pointer;
+  flex-wrap: wrap;
 }
 
 .tb-right a {
