@@ -11,11 +11,21 @@
   </label>
 
   <ul class="tb-right">
+    <% # 统一路径：去掉结尾的 index.html / 斜杠，空串视为 "/" %>
+    <% normalize = ->(u) {
+         s = u.to_s
+         s = s.sub(%r{index\.html?$}, '')
+         s = s.sub(%r{\/+$}, '')
+         s = '/' if s.empty?
+         s
+       } %>
+
+    <% current_norm = normalize.call(current_page.url) %>
+
     <% data.top_banner.nav.each do |item| %>
-      <% current = current_page.url.to_s.sub(%r{\/+$}, '') %>
-      <% target  = item.url.to_s.sub(%r{\/+$}, '') %>
+      <% target_norm = normalize.call(item.url) %>
       <li>
-        <a href="<%= item.url %>" class="<%= current == target ? 'active' : '' %>">
+        <a href="<%= item.url %>" class="<%= current_norm == target_norm ? 'active' : '' %>">
           <%= item.label %>
         </a>
       </li>
