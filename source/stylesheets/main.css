@@ -10,7 +10,6 @@
 
 /* ========= 基础防抖：防止横向溢出、图片自适应 ========= */
 * { box-sizing: border-box; }
-html, body { width: 100%; overflow-x: hidden; }
 img, svg { max-width: 100%; height: auto; display: block; }
 
 
