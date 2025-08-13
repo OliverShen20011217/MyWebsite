@@ -25,7 +25,78 @@
     - Automated end-to-end workflow delivering batch inference under 1 min with structured CSV logging.
     - Noise cut Top-1 accuracy 15% and combined attacks caused 85% errors; proposed defenses.
   Github_URL: 
-  download_URL: Operational Assessment of Adversarial Vulnerabilities in AI-Enabled DoD Systems.zip
+  download_URL: /source/files/Operational Assessment of Adversarial Vulnerabilities in AI-Enabled DoD Systems.zip
+
+- category: projects
+  name: Buckeye Book Bazaar
+  located: Columbus, Ohio                                                          
+  subtitle: Web Application Team Project   
+  time: July 2025                                                                             
+  description:
+    - Rails app for OSU used-book marketplace; Devise authentication and protected flows
+    - Implemented BookListing MVC with image uploads, validations, full CRUD, transaction workflow
+    - Built Transaction History and Wishlist features with user-scoped views and routes
+    - Integrated BookInformation directory; ISBN checks, metadata linking, search and filters
+    - Improved layout and navigation; added seed data; wrote tests and documentation
+  Github_URL: 
+  download_URL: /source/files/Project-6-MasterRubyInsane.zip
+
+
+- category: projects
+  name: Scientific Calculator
+  located: Columbus, Ohio                                                          
+  subtitle: Web Application Team Project      
+  time: July 2025                                                                               
+  description:
+    - Vanilla JS scientific calculator with digits/ops/parentheses, equals, memory/history; accumulator behavior.
+    - Prototype-based compute engine (no eval/ES6); PEMDAS, nested parentheses, sqrt/exp/trig.
+    - Implemented function library + display mapping; to_s formatter for readable expressions.
+    - Built input pipeline from data value buttons to an equation array; robust parsing, validation, and error handling.
+    - CSS Grid UI with side panels; responsive layout; refactored modules; tests/docs.
+  Github_URL: 
+  download_URL: /source/files/Project-5-MasterRubyInsane.zip
+
+- category: projects
+  name: Redesign and implement professor's website 
+  located: Columbus, Ohio                                                          
+  subtitle: Web Application Team Project      
+  time: July 2025                                                                               
+  description:
+    - Redesigned Prof. Eric Fosler-Lussier's site with Middleman, ERB, and vanilla CSS (no JS).
+    - Implemented sticky top banner and CSS-only left panel toggle; stable 1:3 grid.
+    - Modeled content in YAML; reusable templates; active-link highlighting and anchor navigation.
+    - Built publications page and sitemap; ≥3 interlinked pages; W3C-validated HTML/CSS.
+    - Set up GitHub Pages CI deploy; clean structure and accessibility-minded styles.
+  Github_URL: 
+  download_URL: /source/files/Project-4-MasterRubyInsane.zip
+
+- category: projects
+  name: Web Scraper for OSU News
+  located: Columbus, Ohio                                                          
+  subtitle: Web Application Team Project      
+  time: June 2025                                                                            
+  description:
+    - Ruby web scraper for OSU News—interactive reading and cron batch HTML digest.
+    - Implemented Parser (find_topics, find_tag_content) and Scraper scroll; extracted titles/URLs/metadata.
+    - Added request handle_payload + error recovery; polite rate limiting.
+    - Refactored main.rb with keyword/date search; view full article or URL.
+    - Wrote RSpec for parser/scraper/main; improved structure and documentation.
+  Github_URL: 
+  download_URL: /source/files/Project-3-MasterRubyInsane.zip
+
+- category: projects
+  name: The Game of Set
+  located: Columbus, Ohio                                                          
+  subtitle: Web Application Team Project         
+  time: June 2025                                                                               
+  description:
+    - Ruby CLI Set — 12-card board, set check, replace, scoring, endgame.
+    - Implemented Card/Deck generating 81 cards with shuffle/draw; refactored.
+    - Built dealer validation & board search; no-set detection and auto-deal to keep 12.
+    - Co-authored main loop with multiplayer turns, input, scoring, endgame.
+    - Elevated quality with RSpec across modules; set use cases/sprints; enforced tested PRs.
+  Github_URL: 
+  download_URL: /source/files/Project-2-MasterRubyInsane.zip
 
 
 - category: projects
