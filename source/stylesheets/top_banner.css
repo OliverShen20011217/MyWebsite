@@ -59,4 +59,31 @@
 }
 
 
+/* 隐藏锚点实体 */
+#expand, #collapse { position:absolute; width:0; height:0; overflow:hidden; }
 
+/* 默认（展开态）：显示“去折叠”的按钮；隐藏“去展开”的按钮；显示正常菜单 */
+.tb-left--to-expand { display:none; }
+.tb-right--collapsed { display:none; }
+
+/* 折叠态（URL 有 #collapse） */
+#collapse:target ~ nav.top-banner .tb-left--to-collapse { display:none; }
+#collapse:target ~ nav.top-banner .tb-left--to-expand   { display:flex; }
+#collapse:target ~ nav.top-banner .tb-right--expanded   { display:none; }
+#collapse:target ~ nav.top-banner .tb-right--collapsed  { display:flex; }
+
+/* 显式展开态（#expand 或无 hash） */
+#expand:target ~ nav.top-banner .tb-left--to-collapse { display:flex; }
+#expand:target ~ nav.top-banner .tb-left--to-expand   { display:none; }
+#expand:target ~ nav.top-banner .tb-right--expanded   { display:flex; }
+#expand:target ~ nav.top-banner .tb-right--collapsed  { display:none; }
+
+/* —— 真正折叠的是左栏 —— */
+#collapse:target ~ .maingrid {
+  grid-template-columns: 0 minmax(0, 1fr);
+}
+#collapse:target ~ .maingrid .leftGrid{
+  transform: translateX(-100%);
+  opacity: 0;
+  pointer-events: none;
+}

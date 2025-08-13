@@ -1,5 +1,3 @@
-<!--@author Anshuman Ranjan-->
-<!--@created 6/24/25-->
 <!--@description: An HTML template of the top and left banners that will appear on all the pages of the site-->
 
 <link rel="stylesheet" href="/stylesheets/main.css"> 
@@ -15,22 +13,16 @@
   <link rel="stylesheet" href="/stylesheets/site.css">
 </head>
 <body>
-  <!-- 顶部导航（整页通用） -->
+  <a id="expand"></a>
+  <a id="collapse"></a>
+
   <%= partial "layouts/top_banner" %>
 
-  <!-- 左栏开关：和 .maingrid 是兄弟关系，匹配你现有的 CSS 选择器 -->
-  <input type="checkbox" id="leftBarDropdown">
-
-  <!-- 主栅格：左列=左栏，右列=页面内容 -->
   <div class="maingrid">
-    <aside class="leftGrid">
-      <%= partial "layouts/left_banner" %>
-    </aside>
-
-    <main class="rightGrid">
-      <%= yield %>
-    </main>
+    <aside class="leftGrid"><%= partial "layouts/left_banner" %></aside>
+    <main class="rightGrid"><%= yield %></main>
   </div>
+
 </body>
 </html>
 
