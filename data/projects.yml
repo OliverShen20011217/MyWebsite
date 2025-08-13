@@ -25,7 +25,7 @@
     - Automated end-to-end workflow delivering batch inference under 1 min with structured CSV logging.
     - Noise cut Top-1 accuracy 15% and combined attacks caused 85% errors; proposed defenses.
   Github_URL: 
-  download_URL:
+  download_URL: Operational Assessment of Adversarial Vulnerabilities in AI-Enabled DoD Systems.zip
 
 
 - category: projects
@@ -39,7 +39,7 @@
     - Visualized key data trends using scatterplots, bar charts, and pie charts for decision-making.
     - Ranked top players by goals and assists, using offensive metrics for logical ranking.
   Github_URL: 
-  download_URL:
+  download_URL: Top_5_Football_Leagues_Stats_of_Soccer_Player.zip
 
 
 - category: projects
@@ -52,5 +52,5 @@
     - Deployed real-time image prediction via a Streamlit web app.
     - Created scatter plots, pie charts, and bar charts to clearly demonstrate player impact.
     - Integrated feedback logging for incorrect predictions, enabling continuous model improvement.
-  Github_URL: 
+  Github_URL: https://github.com/OliverShen20011217/CatDogClassifier
   download_URL:
