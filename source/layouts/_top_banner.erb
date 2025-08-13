@@ -5,32 +5,42 @@
   Each tab’s URL is pulled from data.top_banner in top_banner.yml.
 -->
 <nav class="top-banner">
-  <!-- 左侧：两份同外观按钮，指向不同 hash -->
+  <!-- 左侧：折叠/展开开关（保持不变） -->
   <a href="#collapse" class="tb-left tb-left--to-collapse">三 Oliver Shen</a>
   <a href="#expand"   class="tb-left tb-left--to-expand">三 Oliver Shen</a>
 
-  <% # 比较时忽略 hash（否则 /xxx.html 和 /xxx.html#collapse 不会高亮） %>
-  <% strip_hash = ->(u) { u.to_s.sub(/#.*$/, '') } %>
-  <% current_nohash = strip_hash.call(current_page.url) %>
+  <%# 规范化：去 hash → 去 index.html → 去结尾斜杠；空串当作 "/" %>
+  <% normalize = ->(u) {
+       s = u.to_s
+       s = s.sub(/#.*$/, '')              # 去掉 hash
+       s = s.sub(%r{index\.html?$}, '')   # 去掉 index.html / index.htm
+       s = s.sub(%r{\/+$}, '')            # 去掉末尾斜杠
+       s = '/' if s.empty?                # 归一到 "/"
+       s
+     } %>
+
+  <% current_norm = normalize.call(current_page.url) %>
 
   <!-- 展开态菜单：正常链接 -->
   <ul class="tb-right tb-right--expanded">
     <% data.top_banner.nav.each do |item| %>
       <% href = item.url.to_s %>
+      <% target_norm = normalize.call(href) %>
       <li>
-        <a href="<%= href %>" class="<%= (current_nohash == strip_hash.call(href)) ? 'active' : '' %>">
+        <a href="<%= href %>" class="<%= current_norm == target_norm ? 'active' : '' %>">
           <%= item.label %>
         </a>
       </li>
     <% end %>
   </ul>
 
-  <!-- 折叠态菜单：每个链接后都带 #collapse，跨页保持折叠 -->
+  <!-- 折叠态菜单：链接后带 #collapse，跨页保持折叠 -->
   <ul class="tb-right tb-right--collapsed">
     <% data.top_banner.nav.each do |item| %>
       <% href = "#{item.url}#collapse" %>
+      <% target_norm = normalize.call(href) %>   <%# normalize 会忽略 hash %>
       <li>
-        <a href="<%= href %>" class="<%= (current_nohash == strip_hash.call(href)) ? 'active' : '' %>">
+        <a href="<%= href %>" class="<%= current_norm == target_norm ? 'active' : '' %>">
           <%= item.label %>
         </a>
       </li>
