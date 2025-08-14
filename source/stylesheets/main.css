@@ -14,5 +14,23 @@ img, svg { max-width: 100%; height: auto; display: block; }
 
 
 
+/* 把 .pub-link 当普通文字展示 */
+.pub-link,
+.pub-link:link,
+.pub-link:visited,
+.pub-link:hover,
+.pub-link:active,
+.pub-link:focus {
+  color: inherit;          /* 继承父元素颜色 */
+  text-decoration: none;   /* 去掉下划线 */
+}
 
+/* 手型光标但外观不变 */
+.pub-link { cursor: pointer; }
+
+/* 可选：仅为键盘导航提供可见焦点，不改变颜色 */
+.pub-link:focus-visible {
+  outline: 2px dashed currentColor;
+  outline-offset: 2px;
+}
 

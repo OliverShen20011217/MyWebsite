@@ -13,7 +13,7 @@
        class="professor-photo" width="260" height="260">
 
   <h2 class="name" style="margin: 0 0 8px 0;">
-    <a href="<%= (data.top_banner&.nav&.first&.url || '/index.html') %>" class="name-link">
+    <a class="pub-link" href="<%= (data.top_banner&.nav&.first&.url || '/index.html') %>" class="name-link">
       <%= lb.Name.to_s %>
     </a>
   </h2>
@@ -28,11 +28,11 @@
 
   <ul class="unbulleted">
     <li>📞 <span class="item-label">Phone：</span>
-      <a href="tel:+<%= lb.Phone.to_s.gsub(/\D/, '') %>"><%= lb.Phone.to_s %></a>
+      <a class="pub-link" href="tel:+<%= lb.Phone.to_s.gsub(/\D/, '') %>"><%= lb.Phone.to_s %></a>
     </li>
 
     <li>✉️ <span class="item-label">Email：</span>
-      <a class="item-text" href="mailto:<%= lb.Email.to_s %>"><%= lb.Email.to_s %></a>
+      <a class="pub-link" href="mailto:<%= lb.Email.to_s %>"><%= lb.Email.to_s %></a>
     </li>
 
     <li>📍 <span class="item-label">Address：</span>
@@ -41,11 +41,11 @@
 
     <li>
       💻 <span class="item-label">Links：</span>
-      <a class="pub-link" href="<%= lb['Github_URL'].to_s %>" target="_blank" rel="noopener">GitHub</a>
+      <a class="pub-link" href="<%= lb['Github_URL'].to_s %>" target="_blank" rel="noopener" style="color:#016efc;">GitHub</a>
       <span> </span> 
       <a class="item-text">,</a>
       <span> </span>
-      <a class="pub-link" href="<%= linkedin %>" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="pub-link" href="<%= linkedin %>" target="_blank" rel="noopener" style="color:#016efc;">LinkedIn</a>
     </li>
 
     <li>🛂 <span class="item-label">Work Authorization：</span>
@@ -57,7 +57,8 @@
     </li>
 
     <li>📅
-    <a class="pub-link" href="<%= lb['register'].to_s %>" target="_blank" rel="noopener">Register an Online Meeting with me</a>
+    <a class="pub-link" href="<%= lb['register'].to_s %> " target="_blank" rel="noopener" style="color:#016efc;">Register an Online Meeting with me</a>
+    ⬅️
     </li>
   </ul>
 </div>
