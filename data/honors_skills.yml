@@ -12,6 +12,7 @@
     - C
     - ERB + HTML/CSS for static sites (Middleman)
     - JavaScript (React Native, Node.js) — web and mobile app development
+    - Typescript (Node.js) — type-safe JavaScript development and application logic
 
 - title: Data & Databases
   items:
